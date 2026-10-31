@@ -22,6 +22,11 @@
   font-family: inherit;
 }
 
+.nav-more__panel {
+  grid-template-columns: repeat(2, minmax(7rem, 1fr));
+  gap: 0.15rem;
+}
+
 .nav-more__panel .nav-link {
   display: flex;
   align-items: center;
@@ -157,25 +162,55 @@ kbd {
   font-size: 0.86em;
 }
 
-/* 有序步骤：允许直接使用 li，而不必加 .steps__item */
+/* 有序步骤：直接写 <ol class="steps"><li>，无需额外类名 */
 .steps > li {
   position: relative;
-  padding-left: 0;
+  margin: 0;
+  padding: var(--space-4) var(--space-5) var(--space-4) 3.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  counter-increment: step;
 }
 
 .steps > li::before {
-  display: none;
+  content: counter(step);
+  position: absolute;
+  left: var(--space-4);
+  top: var(--space-4);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  font-size: var(--text-sm);
+  font-weight: 800;
 }
 
-.steps > li strong:first-child {
+.steps > li > strong:first-child {
+  display: block;
+  margin-bottom: 0.2rem;
   color: var(--fg);
 }
 
-.prose .steps > li {
-  margin-bottom: var(--space-4);
+.steps > li p {
+  margin: 0.25rem 0 0;
 }
 
+.prose .steps > li { margin-bottom: 0; }
+
 /* 引用式列表 */
+.prose .source-list .source-meta {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.prose .source-list li {
+  line-height: 1.6;
+}
+
 .quote-list {
   display: grid;
   gap: var(--space-3);
@@ -387,6 +422,66 @@ a.resource-card:focus-visible {
 .link-list li {
   line-height: var(--leading-snug);
   overflow-wrap: anywhere;
+}
+
+/* ---------- 提示框别名 ---------- */
+
+.callout--warning {
+  border-color: color-mix(in srgb, var(--warning) 34%, var(--border));
+  background: var(--warning-container);
+  color: var(--fg);
+}
+
+.callout--warning .callout__icon {
+  background: color-mix(in srgb, var(--warning) 16%, transparent);
+  color: var(--warning);
+}
+
+.callout--emergency {
+  border-color: color-mix(in srgb, var(--md-error) 38%, var(--border));
+  background: var(--md-error-container);
+  color: var(--md-on-error-container);
+}
+
+.callout--emergency .callout__title {
+  color: var(--md-on-error-container);
+}
+
+.callout--emergency .callout__icon {
+  background: color-mix(in srgb, var(--md-error) 16%, transparent);
+  color: var(--md-error);
+}
+
+.callout--emergency a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+/* ---------- 小组件补充 ---------- */
+
+.icon-button--exit {
+  color: var(--md-error);
+}
+
+.icon-button--exit:hover {
+  background: color-mix(in srgb, var(--md-error) 10%, transparent);
+}
+
+.pager__link--prev {
+  text-align: right;
+}
+
+.home-content {
+  max-width: 100%;
+}
+
+.home-content > section + section {
+  margin-top: var(--space-9);
+}
+
+.home-deploy__note {
+  margin-top: var(--space-3);
 }
 
 /* ---------- 搜索页 ---------- */

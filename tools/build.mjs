@@ -128,6 +128,9 @@ const countExternalLinks = (html) => (html.match(/href="https?:\/\//g) || []).le
 const visiblePages = pages.filter((page) => page.group !== 'hidden');
 const primaryPages = visiblePages.filter((page) => page.group === 'primary');
 const morePages = visiblePages.filter((page) => page.group === 'more');
+/** 桌面导航只放 5 个入口，其余收进“更多”面板；抽屉仍显示全部。 */
+const desktopPages = visiblePages.filter((page) => page.main);
+const overflowPages = visiblePages.filter((page) => !page.main && page.slug);
 
 const navLink = (page, currentSlug, rootPrefix) => {
   const current = page.slug === currentSlug ? ' aria-current="page"' : '';
@@ -135,7 +138,7 @@ const navLink = (page, currentSlug, rootPrefix) => {
 };
 
 const renderHeader = (currentSlug, rootPrefix) => {
-  const moreActive = morePages.some((page) => page.slug === currentSlug);
+  const moreActive = overflowPages.some((page) => page.slug === currentSlug);
   const desktopLink = (page) => {
     const current = page.slug === currentSlug ? ' aria-current="page"' : '';
     return `<a class="nav-link" href="${rootPrefix}${page.slug ? `${page.slug}/` : ''}"${current}>${escapeHtml(page.nav)}</a>`;
@@ -160,11 +163,11 @@ const renderHeader = (currentSlug, rootPrefix) => {
       <span class="brand__text"><strong>${escapeHtml(site.name)}</strong><span>${escapeHtml(site.nameEn)}</span></span>
     </a>
     <nav class="nav-desktop" aria-label="主导航">
-      ${primaryPages.map(desktopLink).join('\n      ')}
+      ${desktopPages.map(desktopLink).join('\n      ')}
       <details class="nav-more${moreActive ? ' is-active' : ''}">
         <summary class="nav-link nav-more__summary">更多<svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
         <div class="nav-more__panel">
-          ${morePages.map((page) => desktopLink(page).replace('class="nav-link"', 'class="nav-link nav-link--panel"')).join('\n          ')}
+          ${overflowPages.map((page) => desktopLink(page).replace('class="nav-link"', 'class="nav-link nav-link--panel"')).join('\n          ')}
         </div>
       </details>
     </nav>
