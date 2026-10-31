@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}" data-mode="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'none'; worker-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="{{THEME_LIGHT}}" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="{{THEME_DARK}}" media="(prefers-color-scheme: dark)">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="keywords" content="{{KEYWORDS}}">
+  <meta name="robots" content="{{ROBOTS}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+  <meta property="og:type" content="{{OG_TYPE}}">
+  <meta property="og:site_name" content="{{SITE_NAME}}">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta property="og:image" content="{{OG_IMAGE}}">
+  <meta property="og:image:alt" content="{{OG_IMAGE_ALT}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{TITLE}}">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:image" content="{{OG_IMAGE}}">
+  <link rel="icon" href="{{FAVICON}}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{APPLE_ICON}}">
+  <link rel="manifest" href="{{MANIFEST}}">
+  <script src="{{ROOT}}assets/js/theme-init.js"></script>
+  {{CSS}}
+</head>
+<body class="{{PAGE_CLASS}}" data-page="{{PAGE_SLUG}}">
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  {{SPRITE}}
+  {{HEADER}}
+  <main id="main-content" tabindex="-1">
+    {{CONTENT}}
+  </main>
+  {{FOOTER}}
+  <noscript>
+    <div class="noscript-note container">
+      <p>本站的主题切换、搜索与筛选需要 JavaScript；正文、导航与外链在禁用脚本时仍然可读。我们不会因为禁用脚本而限制你访问内容。</p>
+    </div>
+  </noscript>
+  {{APP_JS}}
+  {{PAGE_JS}}
+</body>
+</html>

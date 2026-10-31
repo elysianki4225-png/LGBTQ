@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="光谱档案">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E5484D"/>
+      <stop offset=".2" stop-color="#F5A524"/>
+      <stop offset=".4" stop-color="#F2E34C"/>
+      <stop offset=".6" stop-color="#2FA36B"/>
+      <stop offset=".8" stop-color="#3E63DD"/>
+      <stop offset="1" stop-color="#8E4EC6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#FDF7FF"/>
+  <path d="M10 44a22 22 0 0 1 44 0" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="32" cy="45" r="6.5" fill="#5A4A8A"/>
+  <path d="M14 51h36" stroke="#5A4A8A" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+</svg>

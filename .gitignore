@@ -1,0 +1,14 @@
+# 依赖与工具缓存
+node_modules/
+.npm/
+.cache/
+.venv/
+__pycache__/
+
+# 构建与测试产物
+BUILD.json
+*.log
+.DS_Store
+
+# 部署时生成的备份
+*.bak.*
