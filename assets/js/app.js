@@ -160,6 +160,28 @@
     );
   }
 
+  /* 桌面端“更多”菜单：details 原生可用，这里补充点击外部/Esc/选择后收起。 */
+  const menus = Array.from(document.querySelectorAll('.nav-more'));
+  if (menus.length) {
+    menus.forEach((menu) => {
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.open = false;
+        }, { signal });
+      });
+    });
+    const closeMenus = (event) => {
+      menus.forEach((menu) => {
+        if (!menu.open) return;
+        if (event.type === 'keydown' && event.key !== 'Escape') return;
+        if (event.type === 'click' && event.target instanceof Node && menu.contains(event.target)) return;
+        menu.open = false;
+      });
+    };
+    document.addEventListener('click', closeMenus, { signal });
+    document.addEventListener('keydown', closeMenus, { signal });
+  }
+
   /* 快速离开：只在用户点击时导航，不产生后台请求。 */
   document.querySelectorAll('[data-quick-exit]').forEach((button) => {
     button.addEventListener(
