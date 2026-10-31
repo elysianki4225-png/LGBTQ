@@ -1,0 +1,26 @@
+光谱档案 · 文字内容许可
+
+本仓库中的文字内容（src/pages/*.html、README.md 及页面文本）采用
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) 许可。
+
+你可以自由地共享与改编，但须遵守以下条件：
+
+  署名（Attribution）
+    注明来源「光谱档案 / Spectrum Archive」并附上仓库链接：
+    https://github.com/elysianki4225-png/LGBTQ
+    同时保留原文中的来源链接与更新日期。
+
+  相同方式共享（ShareAlike）
+    若你改编、转换或以本内容为基础创作，须以相同的 CC BY-SA 4.0
+    许可发布你的贡献。
+
+  无额外限制
+    不得以法律条款或技术措施限制他人行使本许可授予的权利。
+
+完整许可文本：https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+说明：
+- 代码（tools/、assets/js/、assets/css/、src/layout.html 等）采用 MIT，
+  见 LICENSE-CODE。
+- 引用的第三方研究、报道与图片归原作者所有，不在本许可范围内。
+- 本许可不构成对任何个人或组织的背书。

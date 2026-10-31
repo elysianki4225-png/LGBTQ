@@ -1,0 +1,62 @@
+<section class="search-hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="{{ROOT}}">首页</a><span aria-hidden="true">/</span><span>搜索</span></nav>
+    <p class="eyebrow">站内搜索</p>
+    <h1 class="page-title">在本地搜索，不把问题交给服务器。</h1>
+    <p class="lede">输入关键词，结果在你的浏览器里匹配。搜索词不会发送到任何服务器，也不会写进网址、Cookie 或日志。首次输入时才会下载一份静态索引（约几百 KB）。</p>
+    <form class="search-form" role="search" data-search data-index="{{ROOT}}assets/data/search-index.json" action="#" method="get">
+      <label class="visually-hidden" for="search-input">搜索本站内容</label>
+      <div class="search-field">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        <input id="search-input" name="q" type="search" data-search-input placeholder="例如：中国 证件、HRT、出柜、转换治疗" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <button class="button button--filled" type="submit">搜索</button>
+      </div>
+    </form>
+    <p class="search-status" data-search-status aria-live="polite" role="status">输入关键词开始搜索。查询只在你的设备上匹配。</p>
+  </div>
+</section>
+
+<div class="container page-body">
+  <div class="page-grid page-grid--single">
+    <article class="prose">
+      <section aria-labelledby="results-heading">
+        <h2 id="results-heading">结果</h2>
+        <ol class="search-results" data-search-results aria-labelledby="results-heading"></ol>
+        <p class="search-empty" data-search-empty hidden>没有匹配内容。试试更短的关键词，或从<a href="{{ROOT}}resources/">资源目录</a>开始浏览。</p>
+      </section>
+
+      <section>
+        <h2 id="how">搜索是怎么工作的</h2>
+        <p>本站没有搜索服务器。构建时会从每个页面的标题与正文生成一份静态索引，存为 <code>assets/data/search-index.json</code>。你的浏览器第一次输入时才下载它，随后在本地做多关键词匹配、评分与片段高亮。</p>
+        <ul class="checklist">
+          <li>查询词不会进入网址、Cookie、localStorage 或任何网络请求。</li>
+          <li>索引请求使用 <code>credentials: omit</code>、<code>no-referrer</code> 与强制缓存，避免携带凭据与来源页。</li>
+          <li>页面离开时中止未完成的请求并取消动画帧，不留后台任务。</li>
+          <li>结果为纯文本节点，不使用 <code>innerHTML</code>，避免注入风险。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="tips">搜索建议</h2>
+        <ul class="checklist">
+          <li>用两三个关键词，而不是一整句话：<code>中国 证件</code>、<code>激素 监测</code>、<code>出柜 家庭</code>。</li>
+          <li>试试同义词：跨性别 / trans / 易性症；间性人 / intersex；转换治疗 / 扭转治疗。</li>
+          <li>要找具体数字，搜“调查”“样本”“2021”“ILGA”。</li>
+          <li>要找求助方式，搜“12356”“热线”“法律援助”。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="browse">直接浏览</h2>
+        <div class="link-grid">
+          <a class="link-tile" href="{{ROOT}}identities/"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span>身份图谱</span></a>
+          <a class="link-tile" href="{{ROOT}}china/"><svg class="icon" aria-hidden="true"><use href="#i-map"></use></svg><span>中国专题</span></a>
+          <a class="link-tile" href="{{ROOT}}rights/"><svg class="icon" aria-hidden="true"><use href="#i-scale"></use></svg><span>权益</span></a>
+          <a class="link-tile" href="{{ROOT}}health/"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"></use></svg><span>健康</span></a>
+          <a class="link-tile" href="{{ROOT}}support/"><svg class="icon" aria-hidden="true"><use href="#i-lifebuoy"></use></svg><span>支持</span></a>
+          <a class="link-tile" href="{{ROOT}}resources/"><svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg><span>资源</span></a>
+        </div>
+      </section>
+    </article>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+# 光谱档案 · Spectrum Archive
+# 站点为纯静态页面；以下目录只在仓库中维护，不需要被索引。
+User-agent: *
+Allow: /
+Disallow: /LGBTQ/src/
+Disallow: /LGBTQ/tools/
+Disallow: /LGBTQ/deploy/
+Disallow: /LGBTQ/BUILD.json
+
+Sitemap: https://elysianki4225-png.github.io/LGBTQ/sitemap.xml

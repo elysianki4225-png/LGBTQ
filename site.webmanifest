@@ -1,0 +1,31 @@
+{
+  "name": "光谱档案 · LGBTQ+ 中文资料站",
+  "short_name": "光谱档案",
+  "description": "一个不收集隐私、无第三方脚本、支持明暗主题与响应式阅读的 LGBTQ+ 中文资料站：身份图谱、中国跨性别现状、权益、健康、支持、资源、新闻与一键部署。",
+  "lang": "zh-CN",
+  "start_url": "/LGBTQ/",
+  "scope": "/LGBTQ/",
+  "display": "standalone",
+  "background_color": "#FDF7FF",
+  "theme_color": "#FDF7FF",
+  "icons": [
+    {
+      "src": "/LGBTQ/assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/LGBTQ/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/LGBTQ/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

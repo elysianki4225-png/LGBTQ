@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Spectrum Archive — LGBTQ+ Chinese resource archive">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF7FF"/>
+      <stop offset=".55" stop-color="#F3ECFA"/>
+      <stop offset="1" stop-color="#E9E1F5"/>
+    </linearGradient>
+    <linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E5484D"/>
+      <stop offset=".2" stop-color="#F5A524"/>
+      <stop offset=".4" stop-color="#F2E34C"/>
+      <stop offset=".6" stop-color="#2FA36B"/>
+      <stop offset=".8" stop-color="#3E63DD"/>
+      <stop offset="1" stop-color="#8E4EC6"/>
+    </linearGradient>
+    <clipPath id="flagClip"><rect x="770" y="168" width="352" height="326" rx="26"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 背景装饰 -->
+  <circle cx="1040" cy="60" r="260" fill="#ffffff" opacity=".45"/>
+  <circle cx="120" cy="620" r="220" fill="#ffffff" opacity=".35"/>
+
+  <!-- 左侧文字 -->
+  <g fill="#1C1B1F">
+    <text x="80" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#5A4A8A">SPECTRUM ARCHIVE</text>
+    <text x="80" y="262" font-family="DejaVu Sans, Arial, sans-serif" font-size="52" font-weight="700">Every identity</text>
+    <text x="80" y="330" font-family="DejaVu Sans, Arial, sans-serif" font-size="52" font-weight="700">deserves to be seen.</text>
+    <text x="80" y="398" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" fill="#49454E">An LGBTQ+ resource archive in Chinese.</text>
+    <text x="80" y="434" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" fill="#49454E">Identity, China, rights, health, support, history.</text>
+  </g>
+
+  <g font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#5A4A8A">
+    <rect x="80" y="478" width="228" height="46" rx="23" fill="#E8DEFF"/>
+    <text x="104" y="509" font-weight="700">NO TRACKING</text>
+    <rect x="326" y="478" width="196" height="46" rx="23" fill="#D7F2F0"/>
+    <text x="350" y="509" font-weight="700" fill="#00696D">NO COOKIES</text>
+    <rect x="540" y="478" width="236" height="46" rx="23" fill="#FFD8E4"/>
+    <text x="564" y="509" font-weight="700" fill="#7C4E62">STATIC SITE</text>
+  </g>
+
+  <text x="80" y="572" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" fill="#7A757F">elysianki4225-png.github.io/LGBTQ</text>
+
+  <!-- 进步骄傲旗 -->
+  <g clip-path="url(#flagClip)">
+    <rect x="770" y="168" width="352" height="54.4" fill="#E5484D"/>
+    <rect x="770" y="222.4" width="352" height="54.4" fill="#F5A524"/>
+    <rect x="770" y="276.8" width="352" height="54.4" fill="#F2E34C"/>
+    <rect x="770" y="331.2" width="352" height="54.4" fill="#2FA36B"/>
+    <rect x="770" y="385.6" width="352" height="54.4" fill="#3E63DD"/>
+    <rect x="770" y="440" width="352" height="54" fill="#8E4EC6"/>
+    <path d="M770 168 929 331 770 494Z" fill="#FFFFFF"/>
+    <path d="M770 168 904 331 770 494Z" fill="#FFAFC8"/>
+    <path d="M770 168 879 331 770 494Z" fill="#74D7EE"/>
+    <path d="M770 168 854 331 770 494Z" fill="#613915"/>
+    <path d="M770 168 829 331 770 494Z" fill="#1C1B1F"/>
+  </g>
+  <rect x="770" y="168" width="352" height="326" rx="26" fill="none" stroke="#1C1B1F" stroke-opacity=".12" stroke-width="3"/>
+
+  <!-- 底部彩虹线 -->
+  <rect x="0" y="614" width="1200" height="16" fill="url(#rainbow)"/>
+</svg>

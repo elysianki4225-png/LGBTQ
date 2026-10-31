@@ -1,0 +1,290 @@
+/*
+ * 设计令牌：Material Design 3 风格的色彩角色、形状、层级与排版。
+ * 说明：这是受 MD3 启发的自定义实现，不是 Google 官方产品。
+ * 所有颜色都提供浅色与深色两套，正文对比度以 WCAG 2.2 AA 为目标。
+ */
+
+:root {
+  color-scheme: light;
+
+  /* 排版 */
+  --font-sans: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, Georgia,
+    "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: clamp(2rem, 1.55rem + 2.1vw, 3.15rem);
+  --text-display: clamp(2.45rem, 1.7rem + 3.6vw, 4.8rem);
+  --leading-tight: 1.18;
+  --leading-snug: 1.38;
+  --leading-normal: 1.75;
+
+  /* 间距与尺寸 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
+  --space-8: 2.5rem;
+  --space-9: 3rem;
+  --space-10: 4rem;
+  --space-11: 5rem;
+  --gutter: clamp(1rem, 0.55rem + 2.2vw, 2.5rem);
+  --max-width: 78rem;
+  --prose-width: 72ch;
+  --header-height: 4.35rem;
+  --radius-xs: 0.5rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 999px;
+
+  /* 动效 */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+  --duration: 180ms;
+  --duration-slow: 320ms;
+
+  /* 阴影与焦点 */
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 8%), 0 1px 3px 1px rgb(0 0 0 / 6%);
+  --shadow-2: 0 2px 6px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 8%);
+  --shadow-3: 0 10px 30px rgb(0 0 0 / 12%), 0 2px 8px rgb(0 0 0 / 8%);
+  --focus-ring: 0 0 0 3px var(--md-surface), 0 0 0 6px var(--focus);
+
+  /* 浅色 MD3 色彩角色 */
+  --md-primary: #5a4a8a;
+  --md-on-primary: #ffffff;
+  --md-primary-container: #e8deff;
+  --md-on-primary-container: #1c0f3d;
+  --md-secondary: #00696d;
+  --md-on-secondary: #ffffff;
+  --md-secondary-container: #9cf1f0;
+  --md-on-secondary-container: #002020;
+  --md-tertiary: #7c4e62;
+  --md-on-tertiary: #ffffff;
+  --md-tertiary-container: #ffd8e4;
+  --md-on-tertiary-container: #31101f;
+  --md-error: #a82721;
+  --md-on-error: #ffffff;
+  --md-error-container: #ffdad6;
+  --md-on-error-container: #410001;
+  --md-surface: #fdf7ff;
+  --md-surface-dim: #ded8e1;
+  --md-surface-container-lowest: #ffffff;
+  --md-surface-container-low: #f8f2fb;
+  --md-surface-container: #f2ecf5;
+  --md-surface-container-high: #ece6f0;
+  --md-surface-container-highest: #e6dfe9;
+  --md-on-surface: #1c1b1f;
+  --md-on-surface-variant: #49454e;
+  --md-outline: #7a757f;
+  --md-outline-variant: #cac4cf;
+  --md-inverse-surface: #313033;
+  --md-inverse-on-surface: #f4eff4;
+  --md-scrim: rgb(0 0 0 / 32%);
+  --md-shadow: #000000;
+  --md-hover: rgb(90 74 138 / 8%);
+  --md-active: rgb(90 74 138 / 14%);
+
+  /* 彩虹与状态色：只作强调，不单独承载信息 */
+  --pride-red: #c53a49;
+  --pride-orange: #d96b2b;
+  --pride-yellow: #b78600;
+  --pride-green: #2f7d57;
+  --pride-blue: #2f6db5;
+  --pride-violet: #6b4fa1;
+  --pride-pink: #b84f7e;
+  --pride-cyan: #007b83;
+  --success: #1f6b43;
+  --success-container: #d8f5e2;
+  --warning: #8a5300;
+  --warning-container: #ffefc7;
+  --danger: #a82721;
+  --danger-container: #ffdad6;
+  --info: #2f5d9a;
+  --info-container: #dbe7ff;
+
+  /* 语义别名 */
+  --bg: var(--md-surface);
+  --bg-elevated: var(--md-surface-container-lowest);
+  --bg-muted: var(--md-surface-container);
+  --fg: var(--md-on-surface);
+  --fg-muted: var(--md-on-surface-variant);
+  --border: var(--md-outline-variant);
+  --link: var(--md-primary);
+  --focus: #2f5d9a;
+
+  --page-glow-1: rgb(232 222 255 / 72%);
+  --page-glow-2: rgb(156 241 240 / 38%);
+  --page-glow-3: rgb(255 216 228 / 42%);
+  --hero-surface: linear-gradient(135deg, #f4ecff 0%, #fdf7ff 46%, #e9fbfa 100%);
+  --hero-ink: #211a35;
+  --hero-muted: #534b61;
+  --code-bg: #f0eaf5;
+  --selection: #d8c9ff;
+}
+
+/* 深色：系统偏好，但允许页面强制浅色 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --md-primary: #d0bcff;
+    --md-on-primary: #37265f;
+    --md-primary-container: #4f3d7a;
+    --md-on-primary-container: #e8deff;
+    --md-secondary: #80d5d4;
+    --md-on-secondary: #003737;
+    --md-secondary-container: #005050;
+    --md-on-secondary-container: #9cf1f0;
+    --md-tertiary: #efb8c8;
+    --md-on-tertiary: #492532;
+    --md-tertiary-container: #633b48;
+    --md-on-tertiary-container: #ffd8e4;
+    --md-error: #f2b8b5;
+    --md-on-error: #601410;
+    --md-error-container: #8c1d18;
+    --md-on-error-container: #f9dedc;
+    --md-surface: #141218;
+    --md-surface-dim: #141218;
+    --md-surface-container-lowest: #0f0d13;
+    --md-surface-container-low: #1c1a20;
+    --md-surface-container: #201e24;
+    --md-surface-container-high: #2b292f;
+    --md-surface-container-highest: #36343a;
+    --md-on-surface: #e6e0e9;
+    --md-on-surface-variant: #cac4cf;
+    --md-outline: #948f99;
+    --md-outline-variant: #49454f;
+    --md-inverse-surface: #e6e0e9;
+    --md-inverse-on-surface: #313033;
+    --md-scrim: rgb(0 0 0 / 62%);
+    --md-hover: rgb(208 188 255 / 10%);
+    --md-active: rgb(208 188 255 / 16%);
+
+    --pride-red: #ff8a95;
+    --pride-orange: #ffb07c;
+    --pride-yellow: #f4ce5f;
+    --pride-green: #84d6a8;
+    --pride-blue: #92bdf5;
+    --pride-violet: #c8b0ff;
+    --pride-pink: #f0a0c0;
+    --pride-cyan: #6bd5dd;
+    --success: #9ee8b8;
+    --success-container: #0b3b22;
+    --warning: #ffd58a;
+    --warning-container: #4b3200;
+    --danger: #ffb4ab;
+    --danger-container: #5c1512;
+    --info: #b8ceff;
+    --info-container: #18345e;
+
+    --bg: var(--md-surface);
+    --bg-elevated: var(--md-surface-container-low);
+    --bg-muted: var(--md-surface-container);
+    --fg: var(--md-on-surface);
+    --fg-muted: var(--md-on-surface-variant);
+    --border: var(--md-outline-variant);
+    --link: var(--md-primary);
+    --focus: #9ecbff;
+
+    --page-glow-1: rgb(79 61 122 / 38%);
+    --page-glow-2: rgb(0 80 80 / 22%);
+    --page-glow-3: rgb(99 59 72 / 24%);
+    --hero-surface: linear-gradient(135deg, #211a36 0%, #141218 48%, #102a2a 100%);
+    --hero-ink: #f2ecff;
+    --hero-muted: #cbc2dd;
+    --code-bg: #211e28;
+    --selection: #4f3d7a;
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 40%), 0 1px 3px 1px rgb(0 0 0 / 30%);
+    --shadow-2: 0 2px 6px rgb(0 0 0 / 45%), 0 1px 2px rgb(0 0 0 / 35%);
+    --shadow-3: 0 10px 30px rgb(0 0 0 / 50%), 0 2px 8px rgb(0 0 0 / 35%);
+  }
+}
+
+/* 深色：用户手动选择 */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --md-primary: #d0bcff;
+  --md-on-primary: #37265f;
+  --md-primary-container: #4f3d7a;
+  --md-on-primary-container: #e8deff;
+  --md-secondary: #80d5d4;
+  --md-on-secondary: #003737;
+  --md-secondary-container: #005050;
+  --md-on-secondary-container: #9cf1f0;
+  --md-tertiary: #efb8c8;
+  --md-on-tertiary: #492532;
+  --md-tertiary-container: #633b48;
+  --md-on-tertiary-container: #ffd8e4;
+  --md-error: #f2b8b5;
+  --md-on-error: #601410;
+  --md-error-container: #8c1d18;
+  --md-on-error-container: #f9dedc;
+  --md-surface: #141218;
+  --md-surface-dim: #141218;
+  --md-surface-container-lowest: #0f0d13;
+  --md-surface-container-low: #1c1a20;
+  --md-surface-container: #201e24;
+  --md-surface-container-high: #2b292f;
+  --md-surface-container-highest: #36343a;
+  --md-on-surface: #e6e0e9;
+  --md-on-surface-variant: #cac4cf;
+  --md-outline: #948f99;
+  --md-outline-variant: #49454f;
+  --md-inverse-surface: #e6e0e9;
+  --md-inverse-on-surface: #313033;
+  --md-scrim: rgb(0 0 0 / 62%);
+  --md-hover: rgb(208 188 255 / 10%);
+  --md-active: rgb(208 188 255 / 16%);
+
+  --pride-red: #ff8a95;
+  --pride-orange: #ffb07c;
+  --pride-yellow: #f4ce5f;
+  --pride-green: #84d6a8;
+  --pride-blue: #92bdf5;
+  --pride-violet: #c8b0ff;
+  --pride-pink: #f0a0c0;
+  --pride-cyan: #6bd5dd;
+  --success: #9ee8b8;
+  --success-container: #0b3b22;
+  --warning: #ffd58a;
+  --warning-container: #4b3200;
+  --danger: #ffb4ab;
+  --danger-container: #5c1512;
+  --info: #b8ceff;
+  --info-container: #18345e;
+
+  --bg: var(--md-surface);
+  --bg-elevated: var(--md-surface-container-low);
+  --bg-muted: var(--md-surface-container);
+  --fg: var(--md-on-surface);
+  --fg-muted: var(--md-on-surface-variant);
+  --border: var(--md-outline-variant);
+  --link: var(--md-primary);
+  --focus: #9ecbff;
+
+  --page-glow-1: rgb(79 61 122 / 38%);
+  --page-glow-2: rgb(0 80 80 / 22%);
+  --page-glow-3: rgb(99 59 72 / 24%);
+  --hero-surface: linear-gradient(135deg, #211a36 0%, #141218 48%, #102a2a 100%);
+  --hero-ink: #f2ecff;
+  --hero-muted: #cbc2dd;
+  --code-bg: #211e28;
+  --selection: #4f3d7a;
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 40%), 0 1px 3px 1px rgb(0 0 0 / 30%);
+  --shadow-2: 0 2px 6px rgb(0 0 0 / 45%), 0 1px 2px rgb(0 0 0 / 35%);
+  --shadow-3: 0 10px 30px rgb(0 0 0 / 50%), 0 2px 8px rgb(0 0 0 / 35%);
+}
