@@ -1,5 +1,5 @@
 /*
- * 设计令牌：Corporate Memphis（企业孟菲斯 / Alegria）设计系统。
+ * 设计令牌：颜色、排版、间距、层级与可访问性角色。
  * 视觉特征：暖白纸感画布、高饱和扁平色块、圆润几何与植物形态、清晰描边与零模糊折纸阴影。
  * 所有文本与交互对比度均针对浅色与深色双模式校准，满足 WCAG 2.2 AA 可访问性目标。
  */
@@ -59,7 +59,7 @@
   --duration: 180ms;
   --duration-slow: 300ms;
 
-  /* Corporate Memphis 核心调色板（浅色：暖奶油画布 + Alegria 扁平高饱和色块） */
+  /* 品牌调色板与中性色角色 */
   --cm-canvas: #fffbf2;
   --cm-paper: #ffffff;
   --cm-cream-low: #faf3e5;
@@ -114,7 +114,7 @@
   --cm-btn-shadow-active: 0 1px 0 #191b26;
   --focus-ring: 0 0 0 3px var(--cm-canvas), 0 0 0 6px var(--focus);
 
-  /* 内联 Alegria 扁平矢量插画专用令牌（随明暗模式平滑适配） */
+  /* 内联 SVG 插画颜色角色 */
   --illo-bg: #f6efe0;
   --illo-card: #ffffff;
   --illo-arch: #dfe6ff;
@@ -132,7 +132,7 @@
   --illo-terracotta: #d96b43;
   --illo-plum: #3b2d66;
 
-  /* 兼容角色映射（让全站所有既有类无缝继承企业孟菲斯令牌） */
+  /* 语义角色映射（用于页面与组件） */
   --md-primary: var(--cm-cobalt);
   --md-on-primary: #ffffff;
   --md-primary-container: var(--cm-cobalt-soft);

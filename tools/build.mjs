@@ -139,11 +139,10 @@ const navLink = (page, currentSlug, rootPrefix) => {
 
 const renderBrandMark = () => `<span class="brand__mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" focusable="false">
-          <path d="M5 19a11 11 0 0 1 22 0" fill="none" stroke="#FF5C4D" stroke-width="3.6" stroke-linecap="round"/>
-          <path d="M8.6 19a7.4 7.4 0 0 1 14.8 0" fill="none" stroke="#FFB800" stroke-width="3.4" stroke-linecap="round"/>
-          <path d="M12.2 19a3.8 3.8 0 0 1 7.6 0" fill="none" stroke="#15B386" stroke-width="3.2" stroke-linecap="round"/>
-          <circle cx="16" cy="22.5" r="3.3" fill="#2243E8"/>
-          <rect x="6" y="25.2" width="20" height="2.6" rx="1.3" fill="currentColor" opacity=".82"/>
+          <path d="M8 4h11l7 7v16H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" fill="#FFFFFF"/>
+          <path d="M19 4v7h7" fill="#DCE8FF"/>
+          <path d="M10 15h11M10 19h8" stroke="#52667B" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="m13 24 2.2 2 4-4" fill="none" stroke="#087F6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </span>`;
 
@@ -170,6 +169,7 @@ const renderHeader = (currentSlug, rootPrefix) => {
       </details>
     </nav>
     <div class="app-actions">
+      <a class="button button--filled button--sm header-cta" href="${rootPrefix}support/">获取支持</a>
       <a class="icon-button" href="${rootPrefix}search/" aria-label="站内搜索" title="站内搜索">
         <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
       </a>
@@ -204,6 +204,7 @@ const renderHeader = (currentSlug, rootPrefix) => {
       <ul class="drawer__list">${morePages.map((page) => navLink(page, currentSlug, rootPrefix)).join('')}</ul>
     </nav>
     <div class="drawer__foot">
+      <a class="button button--filled button--full drawer__support" href="${rootPrefix}support/">获取支持</a>
       <a class="button button--outlined button--full" href="${rootPrefix}search/"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>站内搜索</a>
       <p class="small muted">本站不收集数据。主题偏好仅保存在你的浏览器中。</p>
     </div>
@@ -277,29 +278,28 @@ const renderFooter = (rootPrefix) => {
 /* Hero、目录、翻页                                                    */
 /* ------------------------------------------------------------------ */
 
-const renderHero = (page, rootPrefix, minutes, sourceCount) => {
+const renderHero = (page, rootPrefix, minutes, sourceCount, firstHeading) => {
   if (page.customHero) return '';
-  const artHtml = page.heroArt
-    ? `\n    <div class="page-hero__art" aria-hidden="true">
-      <div class="page-hero__art-card">
-        <svg class="page-hero__illo" viewBox="0 0 320 220" focusable="false"><use href="#${escapeHtml(page.heroArt)}"></use></svg>
-      </div>
-    </div>`
-    : '';
+  const startId = firstHeading?.id || 'main-content';
+  const supportHref = page.slug === 'support' ? `${rootPrefix}resources/` : `${rootPrefix}support/`;
+  const supportLabel = page.slug === 'support' ? '查看相关资源' : '需要实际支持？';
   return `<section class="page-hero">
-  <div class="container page-hero__inner${page.heroArt ? '' : ' page-hero__inner--single'}">
+  <div class="container page-hero__inner page-hero__inner--single">
     <div class="page-hero__content">
       <nav class="breadcrumbs" aria-label="面包屑"><a href="${rootPrefix}">首页</a><span aria-hidden="true">/</span><span>${escapeHtml(page.nav)}</span></nav>
       <p class="eyebrow">${escapeHtml(page.eyebrow || '')}</p>
       <h1 class="page-title">${escapeHtml(page.heading)}</h1>
       <p class="lede">${escapeHtml(page.lede || '')}</p>
-      <div class="meta-row">
-        <span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>更新于 ${site.updatedLabel}</span>
+      <div class="page-hero__actions">
+        <a class="button button--filled" href="#${escapeHtml(startId)}">开始阅读 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        <a class="button button--outlined" href="${supportHref}">${supportLabel}</a>
+      </div>
+      <div class="meta-row" aria-label="页面信息">
         <span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg>约 ${minutes} 分钟</span>
         ${sourceCount ? `<span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-link"></use></svg>${sourceCount} 个外部来源</span>` : ''}
         <span class="badge badge--quiet"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"></use></svg>不收集数据</span>
       </div>
-    </div>${artHtml}
+    </div>
   </div>
 </section>`;
 };
@@ -372,7 +372,7 @@ const render404 = async (layout, sprite) => {
     OG_IMAGE_ALT: `${site.name}：LGBTQ+ 中文资料、支持与安全指南`,
     THEME_LIGHT: site.themeColorLight,
     THEME_DARK: site.themeColorDark,
-    CSS: ['tokens', 'base', 'components', 'pages', 'content']
+    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'conversion']
       .map((name) => `<link rel="stylesheet" href="${assetUrl(`assets/css/${name}.css`, '')}">`)
       .join('\n  '),
     SPRITE: sprite,
@@ -415,7 +415,7 @@ const renderPage = async (page, layout, sprite) => {
     .replaceAll('{{YEAR}}', '2026');
   const minutes = readingMinutes(bodyHtml);
   const sourceCount = countExternalLinks(bodyHtml);
-  const hero = renderHero(page, rootPrefix, minutes, sourceCount);
+  const hero = renderHero(page, rootPrefix, minutes, sourceCount, processed.headings[0]);
   const toc = page.toc ? renderToc(processed.headings, rootPrefix) : { desktop: '', mobile: '' };
   const isHome = page.slug === '';
   const content = page.customHero
@@ -451,7 +451,7 @@ const renderPage = async (page, layout, sprite) => {
     OG_IMAGE_ALT: escapeHtml(`${page.ogAlt || `${site.name}：${page.nav}`}`),
     THEME_LIGHT: site.themeColorLight,
     THEME_DARK: site.themeColorDark,
-    CSS: ['tokens', 'base', 'components', 'pages', 'content']
+    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'conversion']
       .map((name) => `<link rel="stylesheet" href="${assetUrl(`assets/css/${name}.css`, rootPrefix)}">`)
       .join('\n  '),
     SPRITE: sprite,

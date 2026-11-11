@@ -65,7 +65,7 @@
   <symbol id="i-stethoscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3M9 13v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/></symbol>
 
   <!-- ================================================================== -->
-  <!-- Corporate Memphis / Alegria 页面主题插画（扁平几何人物 + 植物 + 色块） -->
+  <!-- 页面主题插画（几何人物、植物与场景） -->
   <!-- ================================================================== -->
 
   <!-- 1. 身份与词汇：多元几何符号与双人共舞 -->
@@ -80,13 +80,13 @@
     <circle cx="109" cy="52" r="8" fill="#FFFFFF"/>
     <rect x="150" y="24" width="50" height="36" rx="18" fill="var(--illo-lilac)" stroke="var(--illo-ink)" stroke-width="2"/>
     <path d="m175 34 4 8 8 4-8 4-4 8-4-8-8-4 8-4Z" fill="#FFFFFF"/>
-    <!-- 左侧 Alegria 人物 -->
+    <!-- 左侧 社群人物插画 -->
     <path d="M74 196c6-34 22-54 48-54s38 20 42 54Z" fill="var(--illo-cobalt)"/>
     <path d="M84 150c-18-12-22-34-8-52" stroke="var(--illo-terracotta)" stroke-width="14" stroke-linecap="round"/>
     <path d="M150 150c18-8 34-26 42-48" stroke="var(--illo-terracotta)" stroke-width="14" stroke-linecap="round"/>
     <circle cx="122" cy="116" r="15" fill="var(--illo-terracotta)"/>
     <path d="M108 112c2-14 28-16 30 0-8-4-20-4-30 0Z" fill="var(--illo-ink)"/>
-    <!-- 右侧 Alegria 人物 -->
+    <!-- 右侧 社群人物插画 -->
     <path d="M174 196c6-30 20-48 44-48 22 0 36 18 40 48Z" fill="var(--illo-sun)"/>
     <path d="M242 156c16-14 22-34 12-52" stroke="var(--illo-lilac)" stroke-width="13" stroke-linecap="round"/>
     <circle cx="216" cy="124" r="14" fill="var(--illo-lilac)"/>
@@ -106,7 +106,7 @@
     <rect x="78" y="72" width="48" height="10" rx="5" fill="var(--illo-coral)"/>
     <path d="M78 96h80M78 112h80M78 128h56" stroke="var(--illo-ink)" stroke-width="2.5" stroke-linecap="round" opacity=".65"/>
     <rect x="78" y="146" width="62" height="18" rx="9" fill="var(--cm-teal-soft)" stroke="var(--illo-ink)" stroke-width="1.8"/>
-    <!-- Alegria 阅读人物 -->
+    <!-- 阅读人物插画 -->
     <path d="M168 196c8-38 26-58 54-58 26 0 40 20 46 58Z" fill="var(--illo-coral)"/>
     <path d="M180 152c-16-4-30-14-40-28" stroke="var(--illo-ochre)" stroke-width="14" stroke-linecap="round"/>
     <circle cx="220" cy="114" r="15" fill="var(--illo-ochre)"/>
@@ -148,7 +148,7 @@
     <!-- 循证医疗圆章 -->
     <circle cx="222" cy="118" r="24" fill="var(--illo-card)" stroke="var(--illo-ink)" stroke-width="2.2"/>
     <path d="M222 106v24M210 118h24" stroke="var(--illo-cobalt)" stroke-width="5" stroke-linecap="round"/>
-    <!-- Alegria 双手托举弧线 -->
+    <!-- 托举弧线插画 -->
     <path d="M78 196c8-26 30-40 58-34" stroke="var(--illo-terracotta)" stroke-width="16" stroke-linecap="round"/>
     <path d="M242 196c-8-26-30-40-58-34" stroke="var(--illo-cobalt)" stroke-width="16" stroke-linecap="round"/>
     <circle cx="88" cy="52" r="9" fill="var(--illo-sun)"/>
@@ -246,7 +246,7 @@
     <path d="m84 74 36-12 36 12 36-12v78l-36 12-36-12-36 12Z" fill="var(--illo-card)" stroke="var(--illo-ink)" stroke-width="2.2" stroke-linejoin="round"/>
     <path d="M120 62v78M156 74v78" stroke="var(--illo-cobalt)" stroke-width="2"/>
     <path d="M98 104q22-20 42 4t38-12" stroke="var(--illo-coral)" stroke-width="3" stroke-dasharray="5 5" stroke-linecap="round"/>
-    <!-- Alegria 探索者 -->
+    <!-- 探索者插画 -->
     <path d="M188 196c8-34 24-52 48-52s38 18 44 52Z" fill="var(--illo-cobalt)"/>
     <circle cx="234" cy="118" r="15" fill="var(--illo-terracotta)"/>
     <path d="M220 114c4-14 26-14 28 0Z" fill="var(--illo-ink)"/>
