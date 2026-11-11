@@ -137,6 +137,16 @@ const navLink = (page, currentSlug, rootPrefix) => {
   return `<li><a class="nav-link" href="${rootPrefix}${page.slug ? `${page.slug}/` : ''}"${current}>${escapeHtml(page.nav)}</a></li>`;
 };
 
+const renderBrandMark = () => `<span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" focusable="false">
+          <path d="M5 19a11 11 0 0 1 22 0" fill="none" stroke="#FF5C4D" stroke-width="3.6" stroke-linecap="round"/>
+          <path d="M8.6 19a7.4 7.4 0 0 1 14.8 0" fill="none" stroke="#FFB800" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M12.2 19a3.8 3.8 0 0 1 7.6 0" fill="none" stroke="#15B386" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="16" cy="22.5" r="3.3" fill="#2243E8"/>
+          <rect x="6" y="25.2" width="20" height="2.6" rx="1.3" fill="currentColor" opacity=".82"/>
+        </svg>
+      </span>`;
+
 const renderHeader = (currentSlug, rootPrefix) => {
   const moreActive = overflowPages.some((page) => page.slug === currentSlug);
   const desktopLink = (page) => {
@@ -144,22 +154,10 @@ const renderHeader = (currentSlug, rootPrefix) => {
     return `<a class="nav-link" href="${rootPrefix}${page.slug ? `${page.slug}/` : ''}"${current}>${escapeHtml(page.nav)}</a>`;
   };
   return `<header class="app-bar" data-app-bar>
+  <div class="spectrum-bar" aria-hidden="true"></div>
   <div class="container app-bar__inner">
     <a class="brand" href="${rootPrefix}" aria-label="${escapeHtml(site.name)}首页">
-      <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" focusable="false">
-          <defs>
-            <linearGradient id="brand-rainbow" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#E5484D"/><stop offset=".22" stop-color="#F5A524"/>
-              <stop offset=".44" stop-color="#F2E34C"/><stop offset=".62" stop-color="#2FA36B"/>
-              <stop offset=".8" stop-color="#3E63DD"/><stop offset="1" stop-color="#8E4EC6"/>
-            </linearGradient>
-          </defs>
-          <path d="M4 16a12 12 0 0 1 24 0" fill="none" stroke="url(#brand-rainbow)" stroke-width="3.4" stroke-linecap="round"/>
-          <circle cx="16" cy="21.4" r="3" fill="currentColor"/>
-          <path d="M6 25h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".45"/>
-        </svg>
-      </span>
+      ${renderBrandMark()}
       <span class="brand__text"><strong>${escapeHtml(site.name)}</strong><span>${escapeHtml(site.nameEn)}</span></span>
     </a>
     <nav class="nav-desktop" aria-label="主导航">
@@ -243,9 +241,11 @@ const renderFooter = (rootPrefix) => {
     .join('\n      ');
 
   return `<footer class="site-footer">
+  <div class="spectrum-bar" aria-hidden="true"></div>
   <div class="container footer__grid">
     <div class="footer__brand">
       <a class="brand" href="${rootPrefix}" aria-label="${escapeHtml(site.name)}首页">
+        ${renderBrandMark()}
         <span class="brand__text"><strong>${escapeHtml(site.name)}</strong><span>${escapeHtml(site.nameEn)}</span></span>
       </a>
       <p>一个不收集隐私、无第三方脚本的 LGBTQ+ 中文资料站。内容由 AI 辅助构建，欢迎纠错。</p>
@@ -279,18 +279,27 @@ const renderFooter = (rootPrefix) => {
 
 const renderHero = (page, rootPrefix, minutes, sourceCount) => {
   if (page.customHero) return '';
+  const artHtml = page.heroArt
+    ? `\n    <div class="page-hero__art" aria-hidden="true">
+      <div class="page-hero__art-card">
+        <svg class="page-hero__illo" viewBox="0 0 320 220" focusable="false"><use href="#${escapeHtml(page.heroArt)}"></use></svg>
+      </div>
+    </div>`
+    : '';
   return `<section class="page-hero">
-  <div class="container">
-    <nav class="breadcrumbs" aria-label="面包屑"><a href="${rootPrefix}">首页</a><span aria-hidden="true">/</span><span>${escapeHtml(page.nav)}</span></nav>
-    <p class="eyebrow">${escapeHtml(page.eyebrow || '')}</p>
-    <h1 class="page-title">${escapeHtml(page.heading)}</h1>
-    <p class="lede">${escapeHtml(page.lede || '')}</p>
-    <div class="meta-row">
-      <span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>更新于 ${site.updatedLabel}</span>
-      <span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg>约 ${minutes} 分钟</span>
-      ${sourceCount ? `<span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-link"></use></svg>${sourceCount} 个外部来源</span>` : ''}
-      <span class="badge badge--quiet"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"></use></svg>不收集数据</span>
-    </div>
+  <div class="container page-hero__inner${page.heroArt ? '' : ' page-hero__inner--single'}">
+    <div class="page-hero__content">
+      <nav class="breadcrumbs" aria-label="面包屑"><a href="${rootPrefix}">首页</a><span aria-hidden="true">/</span><span>${escapeHtml(page.nav)}</span></nav>
+      <p class="eyebrow">${escapeHtml(page.eyebrow || '')}</p>
+      <h1 class="page-title">${escapeHtml(page.heading)}</h1>
+      <p class="lede">${escapeHtml(page.lede || '')}</p>
+      <div class="meta-row">
+        <span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-calendar"></use></svg>更新于 ${site.updatedLabel}</span>
+        <span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"></use></svg>约 ${minutes} 分钟</span>
+        ${sourceCount ? `<span class="badge"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-link"></use></svg>${sourceCount} 个外部来源</span>` : ''}
+        <span class="badge badge--quiet"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-lock"></use></svg>不收集数据</span>
+      </div>
+    </div>${artHtml}
   </div>
 </section>`;
 };
@@ -553,8 +562,8 @@ const writeManifest = async () => {
     start_url: `${BASE_PATH}/`,
     scope: `${BASE_PATH}/`,
     display: 'standalone',
-    background_color: '#FDF7FF',
-    theme_color: '#FDF7FF',
+    background_color: site.themeColorLight,
+    theme_color: site.themeColorLight,
     icons: [
       { src: `${BASE_PATH}/assets/img/icon-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
       { src: `${BASE_PATH}/assets/img/icon-512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },

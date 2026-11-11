@@ -1,6 +1,6 @@
 # 光谱档案 · Spectrum Archive
 
-> 一个不收集隐私、无 Cookie、无第三方脚本的 **LGBTQ+ 中文资料站**。覆盖全部性少数身份与跨性别议题，包含一份尽量中立、可核查的「中国跨性别现状」长文；Material Design 3 风格，支持明暗主题与响应式阅读；纯静态，可托管在 GitHub Pages，也可用一条命令部署到自己的服务器。
+> 一个不收集隐私、无 Cookie、无第三方脚本的 **LGBTQ+ 中文资料站**。覆盖全部性少数身份与跨性别议题，包含一份尽量中立、可核查的「中国跨性别现状」长文；Corporate Memphis（企业孟菲斯 / Alegria）视觉风格，支持明暗主题与响应式阅读；纯静态，可托管在 GitHub Pages，也可用一条命令部署到自己的服务器。
 
 - **在线体验（GitHub Pages）**：<https://elysianki4225-png.github.io/LGBTQ/>
 - **一键部署（VPS）**：
@@ -73,8 +73,8 @@
 
 ## 设计与可访问性
 
-- Material Design 3 令牌（颜色、排版、形状、阴影、动效），浅色 / 深色 / 跟随系统三种模式。
-- 全部图标为内联 SVG symbol，**不使用 emoji 作为界面图标**；不加载任何图标 CDN。
+- Corporate Memphis（企业孟菲斯 / Alegria）设计令牌（暖奶油纸感底色、高饱和扁平色块、圆润几何胶囊、清晰描边与零模糊折纸阴影），支持浅色 / 深色 / 跟随系统三种模式。
+- 全部图标与页面主题插画均为内联扁平几何 SVG symbol，**不使用 emoji 作为界面图标**；不加载任何外部插画或图标 CDN。
 - 系统字体栈（包含中文回退），无远程字体请求。
 - 语义化 HTML、跳过链接、可见焦点、键盘可用的导航与抽屉、`aria-live` 状态播报、表格 `caption`。
 - 尊重 `prefers-reduced-motion`、`forced-colors` 与打印场景。

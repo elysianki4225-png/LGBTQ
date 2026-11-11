@@ -1,18 +1,25 @@
 <section class="search-hero">
-  <div class="container">
-    <nav class="breadcrumbs" aria-label="面包屑"><a href="{{ROOT}}">首页</a><span aria-hidden="true">/</span><span>搜索</span></nav>
-    <p class="eyebrow">站内搜索</p>
-    <h1 class="page-title">在本地搜索，不把问题交给服务器。</h1>
-    <p class="lede">输入关键词，结果在你的浏览器里匹配。搜索词不会发送到任何服务器，也不会写进网址、Cookie 或日志。首次输入时才会下载一份静态索引（约几百 KB）。</p>
-    <form class="search-form" role="search" data-search data-index="{{ROOT}}assets/data/search-index.json" action="#" method="get">
-      <label class="visually-hidden" for="search-input">搜索本站内容</label>
-      <div class="search-field">
-        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
-        <input id="search-input" name="q" type="search" data-search-input placeholder="例如：中国 证件、HRT、出柜、转换治疗" autocomplete="off" spellcheck="false" enterkeyhint="search">
-        <button class="button button--filled" type="submit">搜索</button>
+  <div class="container page-hero__inner">
+    <div class="page-hero__content">
+      <nav class="breadcrumbs" aria-label="面包屑"><a href="{{ROOT}}">首页</a><span aria-hidden="true">/</span><span>搜索</span></nav>
+      <p class="eyebrow">站内搜索</p>
+      <h1 class="page-title">在本地搜索，不把问题交给服务器。</h1>
+      <p class="lede">输入关键词，结果在你的浏览器里匹配。搜索词不会发送到任何服务器，也不会写进网址、Cookie 或日志。首次输入时才会下载一份静态索引（约几百 KB）。</p>
+      <form class="search-form" role="search" data-search data-index="{{ROOT}}assets/data/search-index.json" action="#" method="get">
+        <label class="visually-hidden" for="search-input">搜索本站内容</label>
+        <div class="search-field">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input id="search-input" name="q" type="search" data-search-input placeholder="例如：中国 证件、HRT、出柜、转换治疗" autocomplete="off" spellcheck="false" enterkeyhint="search">
+          <button class="button button--filled" type="submit">搜索</button>
+        </div>
+      </form>
+      <p class="search-status" data-search-status aria-live="polite" role="status">输入关键词开始搜索。查询只在你的设备上匹配。</p>
+    </div>
+    <div class="page-hero__art" aria-hidden="true">
+      <div class="page-hero__art-card">
+        <svg class="page-hero__illo" viewBox="0 0 320 220" focusable="false"><use href="#art-search"></use></svg>
       </div>
-    </form>
-    <p class="search-status" data-search-status aria-live="polite" role="status">输入关键词开始搜索。查询只在你的设备上匹配。</p>
+    </div>
   </div>
 </section>
 
