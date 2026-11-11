@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="光谱档案">
   <defs>
-    <linearGradient id="metro-surface" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#36C7DF"/><stop offset=".58" stop-color="#087DB8"/><stop offset="1" stop-color="#064D82"/></linearGradient>
-    <linearGradient id="metro-glint" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".76"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+    <linearGradient id="tile" x1="8" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#B9AAFF"/><stop offset=".52" stop-color="#7559E1"/><stop offset="1" stop-color="#403087"/></linearGradient>
+    <linearGradient id="teal" x1="20" y1="16" x2="50" y2="49" gradientUnits="userSpaceOnUse"><stop stop-color="#91E2D6"/><stop offset="1" stop-color="#159B91"/></linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
   </defs>
-  <rect x="3" y="3" width="58" height="58" rx="17" fill="url(#metro-surface)" stroke="#0E3C5A" stroke-width="2"/>
-  <path d="M5 19a14 14 0 0 1 14-14h26a14 14 0 0 1 14 14v4H5Z" fill="url(#metro-glint)"/>
-  <path d="M19 48V17l13 16 13-16v31" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="45" cy="17" r="5" fill="#C7E85A" stroke="#FFFFFF" stroke-width="2"/>
-  <circle cx="19" cy="48" r="3" fill="#B8F7F1"/>
-  <circle cx="45" cy="48" r="3" fill="#B8F7F1"/>
+  <rect x="3" y="3" width="58" height="58" rx="18" fill="#2B2250" opacity=".18"/>
+  <rect x="3" y="2" width="58" height="58" rx="18" fill="url(#tile)" stroke="#392A79" stroke-width="2"/>
+  <path d="M5 19A14 14 0 0 1 19 5h26a14 14 0 0 1 14 14v4H5Z" fill="url(#gloss)"/>
+  <path d="m14 23 15-9 17 10-15 9Z" fill="#EEE9FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m14 23 17 10v19L14 42Z" fill="#A997FF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m31 33 15-9v18l-15 10Z" fill="url(#teal)" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m31 21 8 5-8 5-8-5Z" fill="#FFFFFF" fill-opacity=".78"/>
 </svg>

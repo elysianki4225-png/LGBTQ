@@ -1,67 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="光谱档案：LGBTQ+ 中文资料，找到你的下一站">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="光谱档案：LGBTQ+ 中文资料，层层找到所需支持">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8FCFD"/><stop offset="1" stop-color="#DCEFF5"/></linearGradient>
-    <linearGradient id="blue-panel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#119ED0"/><stop offset="1" stop-color="#0066A9"/></linearGradient>
-    <linearGradient id="cyan-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5FFFF"/><stop offset="1" stop-color="#D5F1F3"/></linearGradient>
-    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".7"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
-    <pattern id="microdots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#087DB8" opacity=".13"/></pattern>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F9F7FF"/><stop offset=".58" stop-color="#F0EDFB"/><stop offset="1" stop-color="#E2F2EF"/></linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#927BF0"/><stop offset=".55" stop-color="#6144D1"/><stop offset="1" stop-color="#38277E"/></linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A4E7DE"/><stop offset="1" stop-color="#49B7AA"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF" stop-opacity=".8"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+    <pattern id="grain" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".8" fill="#7059C7" opacity=".09"/></pattern>
+    <filter id="shadow" x="-.3" y="-.3" width="1.8" height="1.8"><feGaussianBlur in="SourceAlpha" stdDeviation="12"/><feOffset dy="16" dx="3"/><feColorMatrix type="matrix" values="0 0 0 0 .18 0 0 0 0 .14 0 0 0 0 .36 0 0 0 .19 0"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <rect width="1200" height="630" fill="url(#sky)"/>
-  <rect width="1200" height="630" fill="url(#microdots)"/>
-  <circle cx="1040" cy="-20" r="230" fill="#BDEDF0" opacity=".35"/>
-  <path d="M0 0h1200v12H0z" fill="#0E2C43"/>
-  <path d="M0 12h200v6H0z" fill="#EF6262"/><path d="M200 12h200v6H200z" fill="#F39B39"/><path d="M400 12h200v6H400z" fill="#D7D33C"/><path d="M600 12h200v6H600z" fill="#13A884"/><path d="M800 12h200v6H800z" fill="#168DC5"/><path d="M1000 12h200v6h-200z" fill="#7C5DB8"/>
-
-  <rect x="54" y="52" width="54" height="54" rx="15" fill="url(#blue-panel)" stroke="#0E3C5A" stroke-width="2"/>
-  <path d="M69 92V64l12 14 12-14v28" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="93" cy="64" r="4" fill="#C7E85A" stroke="#fff" stroke-width="1.5"/>
-  <text x="124" y="78" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="26" font-weight="900" fill="#102A43">光谱档案</text>
-  <text x="124" y="101" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="2.2" fill="#4E6A7E">SPECTRUM ARCHIVE · ROUTE TO RESOURCES</text>
-
-  <rect x="55" y="154" width="306" height="37" rx="18" fill="#FFFFFF" stroke="#A8CFDC" stroke-width="1.5"/>
-  <circle cx="76" cy="172" r="6" fill="#B5D72E"/>
-  <text x="94" y="178" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="17" font-weight="800" fill="#08738B">LGBTQ+ 中文资料 · 不追踪</text>
-  <text x="54" y="278" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="59" font-weight="900" fill="#102A43">找到你的下一站</text>
-  <text x="59" y="339" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="35" font-weight="850" fill="#006DB5">资料、支持与选择</text>
-  <text x="60" y="391" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="22" font-weight="500" fill="#4E6A7E">按当下的问题，直达清晰、可核查的内容。</text>
-
-  <rect x="58" y="430" width="335" height="57" rx="12" fill="url(#blue-panel)" stroke="#075383" stroke-width="2"/>
-  <path d="M58 442a10 10 0 0 1 10-10h245a10 10 0 0 1 10 10v9H58Z" fill="url(#gloss)"/>
-  <text x="90" y="467" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="21" font-weight="850" fill="#fff">身份图谱　安全支持　医疗</text>
-  <g font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="16" font-weight="750" fill="#4E6A7E">
-    <circle cx="67" cy="529" r="7" fill="#087E82"/><text x="84" y="535">免注册</text>
-    <circle cx="167" cy="529" r="7" fill="#087E82"/><text x="184" y="535">零追踪</text>
-    <circle cx="266" cy="529" r="7" fill="#087E82"/><text x="283" y="535">来源可查</text>
+  <rect width="1200" height="630" fill="url(#canvas)"/>
+  <rect width="1200" height="630" fill="url(#grain)"/>
+  <circle cx="1060" cy="20" r="265" fill="#C8F0E9" opacity=".44"/>
+  <circle cx="1070" cy="22" r="215" fill="none" stroke="#8774D4" stroke-opacity=".12" stroke-width="1.5"/>
+  <path d="M0 0h1200v12H0z" fill="#2C234A"/>
+  <path d="M0 12h200v6H0z" fill="#E77C9E"/><path d="M200 12h200v6H200z" fill="#E9B24E"/><path d="M400 12h200v6H400z" fill="#9EB96A"/><path d="M600 12h200v6H600z" fill="#35A99A"/><path d="M800 12h200v6H800z" fill="#6686DA"/><path d="M1000 12h200v6h-200z" fill="#9675D4"/>
+  <g transform="translate(56 54)">
+    <rect x="0" y="0" width="54" height="54" rx="16" fill="url(#violet)" stroke="#48358E" stroke-width="1.5"/>
+    <path d="m12 21 15-9 17 10-15 9Z" fill="#EEE9FF" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="m12 21 17 10v18L12 40Z" fill="#A997FF" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="m29 31 15-9v18l-15 9Z" fill="url(#mint)" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/>
+    <text x="70" y="29" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="25" font-weight="900" fill="#241D3F">光谱档案</text>
+    <text x="71" y="51" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="800" letter-spacing="2.2" fill="#68617C">SPECTRUM ARCHIVE · LAYERS OF SUPPORT</text>
   </g>
-  <text x="57" y="584" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#4E6A7E">elysianki4225-png.github.io/LGBTQ</text>
+  <rect x="56" y="151" width="300" height="38" rx="19" fill="#fff" stroke="#D7D0E9"/>
+  <circle cx="77" cy="170" r="6" fill="#45B7A9"/>
+  <text x="95" y="176" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="17" font-weight="800" fill="#4E3B99">LGBTQ+ 中文资料 · 不追踪</text>
+  <text x="54" y="281" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="56" font-weight="900" fill="#211B3B">找到自己的</text>
+  <text x="54" y="349" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="58" font-weight="900" fill="#5A3DC5">下一层支持</text>
+  <text x="59" y="401" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="21" font-weight="500" fill="#5C5871">从身份、健康到安全与权益，清楚找到下一步。</text>
+  <rect x="60" y="446" width="297" height="58" rx="15" fill="#44318F" opacity=".14"/>
+  <rect x="55" y="440" width="297" height="58" rx="15" fill="url(#violet)" stroke="#493392" stroke-width="1.5"/>
+  <path d="M56 455a14 14 0 0 1 14-14h267a14 14 0 0 1 14 14v7H56Z" fill="url(#glass)"/>
+  <text x="89" y="477" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="20" font-weight="850" fill="#FFFFFF">安全 · 医疗 · 身份 · 资源</text>
+  <g font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="15" font-weight="750" fill="#5C5871"><circle cx="66" cy="543" r="6" fill="#5638C8"/><text x="82" y="549">隐私优先</text><circle cx="176" cy="543" r="6" fill="#087E79"/><text x="192" y="549">来源可查</text><circle cx="285" cy="543" r="6" fill="#BD8A18"/><text x="301" y="549">明暗主题</text></g>
+  <text x="56" y="592" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#716B83">elysianki4225-png.github.io/LGBTQ</text>
+  <!-- Three translucent planes form a layered, dimensional resource stack. -->
+  <g filter="url(#shadow)">
+    <g transform="rotate(-8 901 326)">
+      <rect x="741" y="169" width="331" height="314" rx="28" fill="#B8E8DF" stroke="#7EC9BD" stroke-width="2"/>
+      <rect x="759" y="148" width="331" height="314" rx="28" fill="#F7F4FF" stroke="#CFC5EB" stroke-width="2"/>
+      <path d="M788 195h186" stroke="#D5CDEB" stroke-width="1.5"/><circle cx="803" cy="230" r="13" fill="#E5DEFF"/><path d="m798 230 4 4 8-9" fill="none" stroke="#5C43BD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="827" y="222" width="190" height="12" rx="6" fill="#D8D2E9"/><rect x="827" y="243" width="145" height="7" rx="3.5" fill="#E8E4F0"/>
+      <circle cx="803" cy="289" r="13" fill="#DDF5EF"/><path d="M797 289h12m-6-6v12" stroke="#087E79" stroke-width="2" stroke-linecap="round"/><rect x="827" y="281" width="205" height="12" rx="6" fill="#D8D2E9"/><rect x="827" y="302" width="155" height="7" rx="3.5" fill="#E8E4F0"/>
+      <circle cx="803" cy="348" r="13" fill="#FFF0CE"/><path d="M803 341v8l5 3" fill="none" stroke="#785500" stroke-width="2" stroke-linecap="round"/><rect x="827" y="340" width="170" height="12" rx="6" fill="#D8D2E9"/><rect x="827" y="361" width="128" height="7" rx="3.5" fill="#E8E4F0"/>
+      <rect x="781" y="397" width="265" height="39" rx="12" fill="#ECE7FF"/>
+    </g>
+    <g transform="rotate(7 961 345)">
+      <rect x="887" y="209" width="220" height="236" rx="25" fill="url(#violet)" stroke="#49368E" stroke-width="2"/>
+      <path d="M889 235a24 24 0 0 1 24-24h172a24 24 0 0 1 24 24v20H889Z" fill="url(#glass)" opacity=".55"/>
+      <path d="M916 286h162M916 343h162M916 400h162" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="1.4"/>
+      <circle cx="928" cy="286" r="14" fill="#FFFFFF"/><circle cx="928" cy="286" r="5" fill="#8F79EA"/>
+      <circle cx="928" cy="343" r="14" fill="#C6F2E8"/><circle cx="928" cy="343" r="5" fill="#159B91"/>
+      <circle cx="928" cy="400" r="14" fill="#FFF0C9"/><circle cx="928" cy="400" r="5" fill="#BD8A18"/>
+      <rect x="954" y="281" width="116" height="10" rx="5" fill="#FFFFFF" fill-opacity=".9"/><rect x="954" y="339" width="102" height="9" rx="4.5" fill="#FFFFFF" fill-opacity=".82"/><rect x="954" y="396" width="116" height="9" rx="4.5" fill="#FFFFFF" fill-opacity=".82"/>
 
-  <!-- Station directory: one continuous route, three clear destinations. -->
-  <rect x="710" y="80" width="425" height="454" rx="23" fill="#82B9CA" opacity=".35"/>
-  <rect x="693" y="63" width="425" height="454" rx="23" fill="url(#cyan-panel)" stroke="#9FCBD8" stroke-width="2"/>
-  <rect x="693" y="63" width="425" height="86" rx="23" fill="url(#blue-panel)"/>
-  <path d="M693 126v23h425v-23Z" fill="url(#blue-panel)"/>
-  <path d="M693 83a20 20 0 0 1 20-20h385a20 20 0 0 1 20 20v21H693Z" fill="url(#gloss)" opacity=".55"/>
-  <text x="737" y="104" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="17" font-weight="800" letter-spacing="1" fill="#E7FAFD">路线导视 / ROUTE MAP</text>
-  <text x="736" y="184" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="24" font-weight="900" fill="#102A43">从你眼前的事开始</text>
-  <path d="M752 220v211" stroke="#00A6CF" stroke-width="6" stroke-linecap="round"/>
-
-  <circle cx="752" cy="244" r="18" fill="#fff" stroke="#006DB5" stroke-width="5"/>
-  <circle cx="752" cy="244" r="6" fill="#B5D72E"/>
-  <text x="793" y="240" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="21" font-weight="850" fill="#102A43">安全与情绪支持</text>
-  <text x="794" y="266" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="15" fill="#4E6A7E">危机应对 · 热线 · 身边支持</text>
-
-  <circle cx="752" cy="326" r="18" fill="#fff" stroke="#087E82" stroke-width="5"/>
-  <circle cx="752" cy="326" r="6" fill="#B5D72E"/>
-  <text x="793" y="322" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="21" font-weight="850" fill="#102A43">医疗选择与健康</text>
-  <text x="794" y="348" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="15" fill="#4E6A7E">照护选项 · 风险 · 就医准备</text>
-
-  <circle cx="752" cy="408" r="18" fill="#fff" stroke="#E77922" stroke-width="5"/>
-  <circle cx="752" cy="408" r="6" fill="#B5D72E"/>
-  <text x="793" y="404" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="21" font-weight="850" fill="#102A43">身份与称呼</text>
-  <text x="794" y="430" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="15" fill="#4E6A7E">概念 · 词汇 · 自我认同</text>
-  <path d="M724 466h360" stroke="#A9CFDB" stroke-width="1.5"/>
-  <circle cx="739" cy="490" r="6" fill="#087E82"/>
-  <text x="756" y="496" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="14" font-weight="650" fill="#4E6A7E">你的浏览选择不会被网站记录</text>
-  <path d="M0 614h1200v16H0z" fill="#0E2C43"/>
-  <path d="M0 614h200v16H0z" fill="#EF6262"/><path d="M200 614h200v16H200z" fill="#F39B39"/><path d="M400 614h200v16H400z" fill="#D7D33C"/><path d="M600 614h200v16H600z" fill="#13A884"/><path d="M800 614h200v16H800z" fill="#168DC5"/><path d="M1000 614h200v16h-200z" fill="#7C5DB8"/>
+    </g>
+  </g>
+  <path d="M0 614h1200v16H0z" fill="#2C234A"/>
+  <path d="M0 614h200v16H0z" fill="#E77C9E"/><path d="M200 614h200v16H200z" fill="#E9B24E"/><path d="M400 614h200v16H400z" fill="#9EB96A"/><path d="M600 614h200v16H600z" fill="#35A99A"/><path d="M800 614h200v16H800z" fill="#6686DA"/><path d="M1000 614h200v16h-200z" fill="#9675D4"/>
 </svg>
