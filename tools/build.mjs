@@ -139,9 +139,10 @@ const navLink = (page, currentSlug, rootPrefix) => {
 
 const renderBrandMark = () => `<span class="brand__mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" focusable="false">
-          <circle cx="16" cy="16" r="12.8" fill="#007DB8"/>
-          <path d="M10 23V9l6 7 6-7v14" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="22" cy="9" r="3" fill="#B5D72E" stroke="#FFFFFF" stroke-width="1.2"/>
+          <path d="m8 11 8-5 8 5-8 5Z" fill="#D8D0FF" stroke="#FFFFFF" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="m8 11 8 5v10l-8-5Z" fill="#947BEF" stroke="#FFFFFF" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="m16 16 8-5v10l-8 5Z" fill="#45BDB0" stroke="#FFFFFF" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="m16 9 5 3-5 3-5-3Z" fill="#FFFFFF" fill-opacity=".72"/>
         </svg>
       </span>`;
 
@@ -371,7 +372,7 @@ const render404 = async (layout, sprite) => {
     OG_IMAGE_ALT: `${site.name}：LGBTQ+ 中文资料、支持与安全指南`,
     THEME_LIGHT: site.themeColorLight,
     THEME_DARK: site.themeColorDark,
-    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'metro']
+    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'dimensional']
       .map((name) => `<link rel="stylesheet" href="${assetUrl(`assets/css/${name}.css`, '')}">`)
       .join('\n  '),
     SPRITE: sprite,
@@ -450,7 +451,7 @@ const renderPage = async (page, layout, sprite) => {
     OG_IMAGE_ALT: escapeHtml(`${page.ogAlt || `${site.name}：${page.nav}`}`),
     THEME_LIGHT: site.themeColorLight,
     THEME_DARK: site.themeColorDark,
-    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'metro']
+    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'dimensional']
       .map((name) => `<link rel="stylesheet" href="${assetUrl(`assets/css/${name}.css`, rootPrefix)}">`)
       .join('\n  '),
     SPRITE: sprite,
