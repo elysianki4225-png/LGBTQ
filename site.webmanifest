@@ -6,8 +6,8 @@
   "start_url": "/LGBTQ/",
   "scope": "/LGBTQ/",
   "display": "standalone",
-  "background_color": "#F8F1DD",
-  "theme_color": "#F8F1DD",
+  "background_color": "#F1F7FA",
+  "theme_color": "#F1F7FA",
   "icons": [
     {
       "src": "/LGBTQ/assets/img/icon-192.png",
