@@ -37,7 +37,7 @@
 
   const updateThemeMeta = () => {
     if (!themeMeta) return;
-    themeMeta.setAttribute('content', effectiveTheme() === 'dark' ? '#141218' : '#FDF7FF');
+    themeMeta.setAttribute('content', effectiveTheme() === 'dark' ? '#161822' : '#FFFBF2');
   };
 
   const updateThemeControls = (announce) => {

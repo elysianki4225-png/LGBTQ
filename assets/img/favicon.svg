@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="光谱档案">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#E5484D"/>
-      <stop offset=".2" stop-color="#F5A524"/>
-      <stop offset=".4" stop-color="#F2E34C"/>
-      <stop offset=".6" stop-color="#2FA36B"/>
-      <stop offset=".8" stop-color="#3E63DD"/>
-      <stop offset="1" stop-color="#8E4EC6"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="16" fill="#FDF7FF"/>
-  <path d="M10 44a22 22 0 0 1 44 0" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="32" cy="45" r="6.5" fill="#5A4A8A"/>
-  <path d="M14 51h36" stroke="#5A4A8A" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+  <rect x="3" y="3" width="58" height="58" rx="17" fill="#FFFBF2" stroke="#191B26" stroke-width="3"/>
+  <path d="M13 39V30a19 19 0 0 1 38 0v9" fill="#DFE6FF" stroke="#191B26" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M14 39V30a18 18 0 0 1 4-11" fill="none" stroke="#FF6F61" stroke-width="5"/>
+  <path d="M18 19a18 18 0 0 1 10-6" fill="none" stroke="#FFB800" stroke-width="5"/>
+  <path d="M28 13a18 18 0 0 1 12 2" fill="none" stroke="#14A87E" stroke-width="5"/>
+  <path d="M40 15a18 18 0 0 1 9 10" fill="none" stroke="#7C5CFF" stroke-width="5"/>
+  <rect x="17" y="35" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#191B26" stroke-width="3"/>
+  <path d="M32 39v10" stroke="#191B26" stroke-width="2.5"/>
+  <path d="M21 40h7m8 0h7" stroke="#2243E8" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="32" cy="29" r="4.5" fill="#FF9B90" stroke="#191B26" stroke-width="2"/>
+  <path d="M25 35c1-4 3-6 7-6s6 2 7 6" fill="#0B7A5C" stroke="#191B26" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M10 55h44" stroke="#191B26" stroke-width="3" stroke-linecap="round"/>
 </svg>

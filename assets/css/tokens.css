@@ -1,19 +1,21 @@
 /*
- * 设计令牌：Material Design 3 风格的色彩角色、形状、层级与排版。
- * 说明：这是受 MD3 启发的自定义实现，不是 Google 官方产品。
- * 所有颜色都提供浅色与深色两套，正文对比度以 WCAG 2.2 AA 为目标。
+ * 设计令牌：Corporate Memphis（企业孟菲斯 / Alegria）设计系统。
+ * 视觉特征：暖白纸感画布、高饱和扁平色块、圆润几何与植物形态、清晰描边与零模糊折纸阴影。
+ * 所有文本与交互对比度均针对浅色与深色双模式校准，满足 WCAG 2.2 AA 可访问性目标。
  */
 
 :root {
   color-scheme: light;
 
-  /* 排版 */
-  --font-sans: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, Georgia,
+  /* 排版：友好、几何感与人文兼顾的无衬线与衬线回退栈（零远程字体请求） */
+  --font-sans: "Plus Jakarta Sans", "DM Sans", "Outfit", "HarmonyOS Sans SC", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia,
     "Times New Roman", serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
     monospace;
+
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -21,13 +23,13 @@
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
   --text-2xl: 1.875rem;
-  --text-3xl: clamp(2rem, 1.55rem + 2.1vw, 3.15rem);
-  --text-display: clamp(2.45rem, 1.7rem + 3.6vw, 4.8rem);
-  --leading-tight: 1.18;
-  --leading-snug: 1.38;
-  --leading-normal: 1.75;
+  --text-3xl: clamp(2rem, 1.55rem + 2.1vw, 3.2rem);
+  --text-display: clamp(2.45rem, 1.7rem + 3.5vw, 4.65rem);
+  --leading-tight: 1.16;
+  --leading-snug: 1.36;
+  --leading-normal: 1.76;
 
-  /* 间距与尺寸 */
+  /* 间距与圆润几何尺寸 */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -42,249 +44,447 @@
   --gutter: clamp(1rem, 0.55rem + 2.2vw, 2.5rem);
   --max-width: 78rem;
   --prose-width: 72ch;
-  --header-height: 4.35rem;
-  --radius-xs: 0.5rem;
-  --radius-sm: 0.75rem;
-  --radius-md: 1rem;
+  --header-height: 4.55rem;
+
+  --radius-xs: 0.625rem;
+  --radius-sm: 0.875rem;
+  --radius-md: 1.15rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
   --radius-full: 999px;
 
-  /* 动效 */
-  --ease: cubic-bezier(0.2, 0, 0, 1);
-  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+  /* 轻快弹性的扁平插画动效 */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-emphasized: cubic-bezier(0.34, 1.4, 0.64, 1);
   --duration: 180ms;
-  --duration-slow: 320ms;
+  --duration-slow: 300ms;
 
-  /* 阴影与焦点 */
-  --shadow-1: 0 1px 2px rgb(0 0 0 / 8%), 0 1px 3px 1px rgb(0 0 0 / 6%);
-  --shadow-2: 0 2px 6px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 8%);
-  --shadow-3: 0 10px 30px rgb(0 0 0 / 12%), 0 2px 8px rgb(0 0 0 / 8%);
-  --focus-ring: 0 0 0 3px var(--md-surface), 0 0 0 6px var(--focus);
+  /* Corporate Memphis 核心调色板（浅色：暖奶油画布 + Alegria 扁平高饱和色块） */
+  --cm-canvas: #fffbf2;
+  --cm-paper: #ffffff;
+  --cm-cream-low: #faf3e5;
+  --cm-cream: #f4ead7;
+  --cm-cream-high: #ece0c8;
+  --cm-cream-highest: #e2d3b5;
 
-  /* 浅色 MD3 色彩角色 */
-  --md-primary: #5a4a8a;
+  --cm-ink: #191b26;
+  --cm-ink-muted: #474b5e;
+  --cm-border-ink: #191b26;
+  --cm-border-strong: #2d3145;
+  --cm-border-card: #cfc3ae;
+
+  --cm-cobalt: #2243e8;
+  --cm-cobalt-vivid: #2f54ff;
+  --cm-cobalt-soft: #dfe6ff;
+  --cm-cobalt-ink: #101f6e;
+
+  --cm-teal: #0b7a5c;
+  --cm-teal-vivid: #15b386;
+  --cm-teal-soft: #cef5e6;
+  --cm-teal-ink: #063b2c;
+
+  --cm-coral: #c23627;
+  --cm-coral-vivid: #ff5c4d;
+  --cm-coral-soft: #ffe0da;
+  --cm-coral-ink: #54130c;
+
+  --cm-sun: #ffb800;
+  --cm-sun-soft: #fff0b8;
+  --cm-sun-ink: #472e00;
+
+  --cm-lilac: #7c5cff;
+  --cm-lilac-soft: #eae2ff;
+  --cm-lilac-ink: #2a166b;
+
+  --cm-blush: #ff7eb6;
+  --cm-blush-soft: #ffe0ee;
+  --cm-blush-ink: #591234;
+
+  --cm-sky-soft: #dff2ff;
+  --cm-peach-soft: #ffead6;
+
+  /* 零模糊扁平折纸/错位阴影 */
+  --cm-shadow-color: rgb(25 27 38 / 13%);
+  --cm-shadow-color-strong: rgb(25 27 38 / 22%);
+  --shadow-1: 3px 3px 0 var(--cm-shadow-color);
+  --shadow-2: 5px 5px 0 var(--cm-shadow-color-strong);
+  --shadow-3: 6px 6px 0 #191b26;
+  --cm-btn-shadow: 0 3px 0 #191b26;
+  --cm-btn-shadow-hover: 0 5px 0 #191b26;
+  --cm-btn-shadow-active: 0 1px 0 #191b26;
+  --focus-ring: 0 0 0 3px var(--cm-canvas), 0 0 0 6px var(--focus);
+
+  /* 内联 Alegria 扁平矢量插画专用令牌（随明暗模式平滑适配） */
+  --illo-bg: #f6efe0;
+  --illo-card: #ffffff;
+  --illo-arch: #dfe6ff;
+  --illo-arch-alt: #ffe0da;
+  --illo-ink: #191b26;
+  --illo-cobalt: #2f54ff;
+  --illo-coral: #ff5c4d;
+  --illo-sun: #ffb800;
+  --illo-teal: #12a57bc9;
+  --illo-leaf-dark: #0c7c5d;
+  --illo-leaf-light: #49d4ab;
+  --illo-lilac: #8b6eff;
+  --illo-blush: #ff85b8;
+  --illo-ochre: #f29d38;
+  --illo-terracotta: #d96b43;
+  --illo-plum: #3b2d66;
+
+  /* 兼容角色映射（让全站所有既有类无缝继承企业孟菲斯令牌） */
+  --md-primary: var(--cm-cobalt);
   --md-on-primary: #ffffff;
-  --md-primary-container: #e8deff;
-  --md-on-primary-container: #1c0f3d;
-  --md-secondary: #00696d;
+  --md-primary-container: var(--cm-cobalt-soft);
+  --md-on-primary-container: var(--cm-cobalt-ink);
+  --md-secondary: var(--cm-teal);
   --md-on-secondary: #ffffff;
-  --md-secondary-container: #9cf1f0;
-  --md-on-secondary-container: #002020;
-  --md-tertiary: #7c4e62;
+  --md-secondary-container: var(--cm-teal-soft);
+  --md-on-secondary-container: var(--cm-teal-ink);
+  --md-tertiary: var(--cm-coral);
   --md-on-tertiary: #ffffff;
-  --md-tertiary-container: #ffd8e4;
-  --md-on-tertiary-container: #31101f;
-  --md-error: #a82721;
+  --md-tertiary-container: var(--cm-coral-soft);
+  --md-on-tertiary-container: var(--cm-coral-ink);
+  --md-error: #b3261e;
   --md-on-error: #ffffff;
   --md-error-container: #ffdad6;
-  --md-on-error-container: #410001;
-  --md-surface: #fdf7ff;
-  --md-surface-dim: #ded8e1;
-  --md-surface-container-lowest: #ffffff;
-  --md-surface-container-low: #f8f2fb;
-  --md-surface-container: #f2ecf5;
-  --md-surface-container-high: #ece6f0;
-  --md-surface-container-highest: #e6dfe9;
-  --md-on-surface: #1c1b1f;
-  --md-on-surface-variant: #49454e;
-  --md-outline: #7a757f;
-  --md-outline-variant: #cac4cf;
-  --md-inverse-surface: #313033;
-  --md-inverse-on-surface: #f4eff4;
-  --md-scrim: rgb(0 0 0 / 32%);
-  --md-shadow: #000000;
-  --md-hover: rgb(90 74 138 / 8%);
-  --md-active: rgb(90 74 138 / 14%);
+  --md-on-error-container: #410002;
+  --md-surface: var(--cm-canvas);
+  --md-surface-dim: var(--cm-cream-high);
+  --md-surface-container-lowest: var(--cm-paper);
+  --md-surface-container-low: var(--cm-cream-low);
+  --md-surface-container: var(--cm-cream);
+  --md-surface-container-high: var(--cm-cream-high);
+  --md-surface-container-highest: var(--cm-cream-highest);
+  --md-on-surface: var(--cm-ink);
+  --md-on-surface-variant: var(--cm-ink-muted);
+  --md-outline: #5c6075;
+  --md-outline-variant: var(--cm-border-card);
+  --md-inverse-surface: #191b26;
+  --md-inverse-on-surface: #fffbf2;
+  --md-scrim: rgb(25 27 38 / 46%);
+  --md-shadow: #191b26;
+  --md-hover: rgb(34 67 232 / 8%);
+  --md-active: rgb(34 67 232 / 14%);
 
-  /* 彩虹与状态色：只作强调，不单独承载信息 */
-  --pride-red: #c53a49;
-  --pride-orange: #d96b2b;
-  --pride-yellow: #b78600;
-  --pride-green: #2f7d57;
-  --pride-blue: #2f6db5;
-  --pride-violet: #6b4fa1;
-  --pride-pink: #b84f7e;
-  --pride-cyan: #007b83;
-  --success: #1f6b43;
-  --success-container: #d8f5e2;
-  --warning: #8a5300;
-  --warning-container: #ffefc7;
-  --danger: #a82721;
-  --danger-container: #ffdad6;
-  --info: #2f5d9a;
-  --info-container: #dbe7ff;
+  /* 彩虹与状态色（扁平孟菲斯明快饱和度 + AA 文本对比度） */
+  --pride-red: #ff4d4d;
+  --pride-orange: #ff8a2b;
+  --pride-yellow: #ffb800;
+  --pride-green: #14a87e;
+  --pride-blue: #2f54ff;
+  --pride-violet: #7c5cff;
+  --pride-pink: #ff7eb6;
+  --pride-cyan: #16b5d8;
+
+  --success: #0b6e4f;
+  --success-container: #d2f6e7;
+  --warning: #7d4900;
+  --warning-container: #fff0bd;
+  --danger: #ad231a;
+  --danger-container: #ffdeda;
+  --info: #1d3fd1;
+  --info-container: #dfe6ff;
 
   /* 语义别名 */
-  --bg: var(--md-surface);
-  --bg-elevated: var(--md-surface-container-lowest);
-  --bg-muted: var(--md-surface-container);
-  --fg: var(--md-on-surface);
-  --fg-muted: var(--md-on-surface-variant);
-  --border: var(--md-outline-variant);
-  --link: var(--md-primary);
-  --focus: #2f5d9a;
+  --bg: var(--cm-canvas);
+  --bg-elevated: var(--cm-paper);
+  --bg-muted: var(--cm-cream);
+  --fg: var(--cm-ink);
+  --fg-muted: var(--cm-ink-muted);
+  --border: var(--cm-border-card);
+  --link: var(--cm-cobalt);
+  --focus: #2243e8;
 
-  --page-glow-1: rgb(232 222 255 / 72%);
-  --page-glow-2: rgb(156 241 240 / 38%);
-  --page-glow-3: rgb(255 216 228 / 42%);
-  --hero-surface: linear-gradient(135deg, #f4ecff 0%, #fdf7ff 46%, #e9fbfa 100%);
-  --hero-ink: #211a35;
-  --hero-muted: #534b61;
-  --code-bg: #f0eaf5;
-  --selection: #d8c9ff;
+  --hero-surface: #f7efe0;
+  --hero-ink: #191b26;
+  --hero-muted: #434759;
+  --code-bg: #f3ead8;
+  --selection: #ffe28a;
+  --cm-dot-pattern: rgb(25 27 38 / 9%);
+  --cm-marker: #ffe078;
 }
 
-/* 深色：系统偏好，但允许页面强制浅色 */
+/* 深色模式：系统偏好（允许手动锁定浅色） */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
 
-    --md-primary: #d0bcff;
-    --md-on-primary: #37265f;
-    --md-primary-container: #4f3d7a;
-    --md-on-primary-container: #e8deff;
-    --md-secondary: #80d5d4;
-    --md-on-secondary: #003737;
-    --md-secondary-container: #005050;
-    --md-on-secondary-container: #9cf1f0;
-    --md-tertiary: #efb8c8;
-    --md-on-tertiary: #492532;
-    --md-tertiary-container: #633b48;
-    --md-on-tertiary-container: #ffd8e4;
-    --md-error: #f2b8b5;
-    --md-on-error: #601410;
-    --md-error-container: #8c1d18;
-    --md-on-error-container: #f9dedc;
-    --md-surface: #141218;
-    --md-surface-dim: #141218;
-    --md-surface-container-lowest: #0f0d13;
-    --md-surface-container-low: #1c1a20;
-    --md-surface-container: #201e24;
-    --md-surface-container-high: #2b292f;
-    --md-surface-container-highest: #36343a;
-    --md-on-surface: #e6e0e9;
-    --md-on-surface-variant: #cac4cf;
-    --md-outline: #948f99;
-    --md-outline-variant: #49454f;
-    --md-inverse-surface: #e6e0e9;
-    --md-inverse-on-surface: #313033;
-    --md-scrim: rgb(0 0 0 / 62%);
-    --md-hover: rgb(208 188 255 / 10%);
-    --md-active: rgb(208 188 255 / 16%);
+    --cm-canvas: #161822;
+    --cm-paper: #1f2231;
+    --cm-cream-low: #1b1e2c;
+    --cm-cream: #25293b;
+    --cm-cream-high: #2f344b;
+    --cm-cream-highest: #3a405c;
 
-    --pride-red: #ff8a95;
-    --pride-orange: #ffb07c;
-    --pride-yellow: #f4ce5f;
-    --pride-green: #84d6a8;
-    --pride-blue: #92bdf5;
-    --pride-violet: #c8b0ff;
-    --pride-pink: #f0a0c0;
-    --pride-cyan: #6bd5dd;
-    --success: #9ee8b8;
-    --success-container: #0b3b22;
-    --warning: #ffd58a;
-    --warning-container: #4b3200;
+    --cm-ink: #f6f1e7;
+    --cm-ink-muted: #c4bfb4;
+    --cm-border-ink: #5d668c;
+    --cm-border-strong: #737da8;
+    --cm-border-card: #383e59;
+
+    --cm-cobalt: #96adff;
+    --cm-cobalt-vivid: #6b8aff;
+    --cm-cobalt-soft: #263573;
+    --cm-cobalt-ink: #e5ebff;
+
+    --cm-teal: #6ce5c1;
+    --cm-teal-vivid: #34d1a4;
+    --cm-teal-soft: #134a3a;
+    --cm-teal-ink: #d5faee;
+
+    --cm-coral: #ff9b90;
+    --cm-coral-vivid: #ff6f61;
+    --cm-coral-soft: #5c231d;
+    --cm-coral-ink: #ffe3de;
+
+    --cm-sun: #ffc83d;
+    --cm-sun-soft: #46350b;
+    --cm-sun-ink: #ffe8a3;
+
+    --cm-lilac: #b9a4ff;
+    --cm-lilac-soft: #352863;
+    --cm-lilac-ink: #eee8ff;
+
+    --cm-blush: #ff9ec7;
+    --cm-blush-soft: #542038;
+    --cm-blush-ink: #ffe3ef;
+
+    --cm-sky-soft: #1c3654;
+    --cm-peach-soft: #4d2c1c;
+
+    --cm-shadow-color: rgb(5 6 11 / 52%);
+    --cm-shadow-color-strong: rgb(5 6 11 / 72%);
+    --shadow-1: 3px 3px 0 var(--cm-shadow-color);
+    --shadow-2: 5px 5px 0 var(--cm-shadow-color-strong);
+    --shadow-3: 6px 6px 0 rgb(5 6 11 / 82%);
+    --cm-btn-shadow: 0 3px 0 #090a10;
+    --cm-btn-shadow-hover: 0 5px 0 #090a10;
+    --cm-btn-shadow-active: 0 1px 0 #090a10;
+
+    --illo-bg: #222638;
+    --illo-card: #2a2f45;
+    --illo-arch: #2b3a78;
+    --illo-arch-alt: #592622;
+    --illo-ink: #f6f1e7;
+    --illo-cobalt: #6b8aff;
+    --illo-coral: #ff7062;
+    --illo-sun: #ffc83d;
+    --illo-leaf-dark: #1eb88b;
+    --illo-leaf-light: #6ce5c1;
+    --illo-lilac: #a58bff;
+    --illo-blush: #ff94c2;
+    --illo-ochre: #f6ad49;
+    --illo-terracotta: #e67e55;
+    --illo-plum: #594596;
+
+    --md-primary: var(--cm-cobalt);
+    --md-on-primary: #0e1b5c;
+    --md-primary-container: var(--cm-cobalt-soft);
+    --md-on-primary-container: var(--cm-cobalt-ink);
+    --md-secondary: var(--cm-teal);
+    --md-on-secondary: #053829;
+    --md-secondary-container: var(--cm-teal-soft);
+    --md-on-secondary-container: var(--cm-teal-ink);
+    --md-tertiary: var(--cm-coral);
+    --md-on-tertiary: #4f120b;
+    --md-tertiary-container: var(--cm-coral-soft);
+    --md-on-tertiary-container: var(--cm-coral-ink);
+    --md-error: #ffb4ab;
+    --md-on-error: #690005;
+    --md-error-container: #7d1d17;
+    --md-on-error-container: #ffdad6;
+    --md-surface: var(--cm-canvas);
+    --md-surface-dim: #11131b;
+    --md-surface-container-lowest: #11131b;
+    --md-surface-container-low: var(--cm-paper);
+    --md-surface-container: var(--cm-cream);
+    --md-surface-container-high: var(--cm-cream-high);
+    --md-surface-container-highest: var(--cm-cream-highest);
+    --md-on-surface: var(--cm-ink);
+    --md-on-surface-variant: var(--cm-ink-muted);
+    --md-outline: #8d94b3;
+    --md-outline-variant: var(--cm-border-card);
+    --md-inverse-surface: #f6f1e7;
+    --md-inverse-on-surface: #191b26;
+    --md-scrim: rgb(5 6 11 / 70%);
+    --md-hover: rgb(150 173 255 / 12%);
+    --md-active: rgb(150 173 255 / 20%);
+
+    --pride-red: #ff7575;
+    --pride-orange: #ffa352;
+    --pride-yellow: #ffd152;
+    --pride-green: #4ce0b3;
+    --pride-blue: #7d9bff;
+    --pride-violet: #b69eff;
+    --pride-pink: #ff99c8;
+    --pride-cyan: #5fd6f2;
+
+    --success: #80f0c8;
+    --success-container: #0f3f2f;
+    --warning: #ffd885;
+    --warning-container: #4a3409;
     --danger: #ffb4ab;
-    --danger-container: #5c1512;
-    --info: #b8ceff;
-    --info-container: #18345e;
+    --danger-container: #5c1915;
+    --info: #b3c5ff;
+    --info-container: #1f3169;
 
-    --bg: var(--md-surface);
-    --bg-elevated: var(--md-surface-container-low);
-    --bg-muted: var(--md-surface-container);
-    --fg: var(--md-on-surface);
-    --fg-muted: var(--md-on-surface-variant);
-    --border: var(--md-outline-variant);
-    --link: var(--md-primary);
-    --focus: #9ecbff;
+    --bg: var(--cm-canvas);
+    --bg-elevated: var(--cm-paper);
+    --bg-muted: var(--cm-cream);
+    --fg: var(--cm-ink);
+    --fg-muted: var(--cm-ink-muted);
+    --border: var(--cm-border-card);
+    --link: var(--cm-cobalt);
+    --focus: #96adff;
 
-    --page-glow-1: rgb(79 61 122 / 38%);
-    --page-glow-2: rgb(0 80 80 / 22%);
-    --page-glow-3: rgb(99 59 72 / 24%);
-    --hero-surface: linear-gradient(135deg, #211a36 0%, #141218 48%, #102a2a 100%);
-    --hero-ink: #f2ecff;
-    --hero-muted: #cbc2dd;
-    --code-bg: #211e28;
-    --selection: #4f3d7a;
-    --shadow-1: 0 1px 2px rgb(0 0 0 / 40%), 0 1px 3px 1px rgb(0 0 0 / 30%);
-    --shadow-2: 0 2px 6px rgb(0 0 0 / 45%), 0 1px 2px rgb(0 0 0 / 35%);
-    --shadow-3: 0 10px 30px rgb(0 0 0 / 50%), 0 2px 8px rgb(0 0 0 / 35%);
+    --hero-surface: #1c1f2e;
+    --hero-ink: #f6f1e7;
+    --hero-muted: #c9c4b9;
+    --code-bg: #222638;
+    --selection: #473878;
+    --cm-dot-pattern: rgb(246 241 231 / 9%);
+    --cm-marker: #59430d;
   }
 }
 
-/* 深色：用户手动选择 */
+/* 深色模式：用户手动锁定 */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --md-primary: #d0bcff;
-  --md-on-primary: #37265f;
-  --md-primary-container: #4f3d7a;
-  --md-on-primary-container: #e8deff;
-  --md-secondary: #80d5d4;
-  --md-on-secondary: #003737;
-  --md-secondary-container: #005050;
-  --md-on-secondary-container: #9cf1f0;
-  --md-tertiary: #efb8c8;
-  --md-on-tertiary: #492532;
-  --md-tertiary-container: #633b48;
-  --md-on-tertiary-container: #ffd8e4;
-  --md-error: #f2b8b5;
-  --md-on-error: #601410;
-  --md-error-container: #8c1d18;
-  --md-on-error-container: #f9dedc;
-  --md-surface: #141218;
-  --md-surface-dim: #141218;
-  --md-surface-container-lowest: #0f0d13;
-  --md-surface-container-low: #1c1a20;
-  --md-surface-container: #201e24;
-  --md-surface-container-high: #2b292f;
-  --md-surface-container-highest: #36343a;
-  --md-on-surface: #e6e0e9;
-  --md-on-surface-variant: #cac4cf;
-  --md-outline: #948f99;
-  --md-outline-variant: #49454f;
-  --md-inverse-surface: #e6e0e9;
-  --md-inverse-on-surface: #313033;
-  --md-scrim: rgb(0 0 0 / 62%);
-  --md-hover: rgb(208 188 255 / 10%);
-  --md-active: rgb(208 188 255 / 16%);
+  --cm-canvas: #161822;
+  --cm-paper: #1f2231;
+  --cm-cream-low: #1b1e2c;
+  --cm-cream: #25293b;
+  --cm-cream-high: #2f344b;
+  --cm-cream-highest: #3a405c;
 
-  --pride-red: #ff8a95;
-  --pride-orange: #ffb07c;
-  --pride-yellow: #f4ce5f;
-  --pride-green: #84d6a8;
-  --pride-blue: #92bdf5;
-  --pride-violet: #c8b0ff;
-  --pride-pink: #f0a0c0;
-  --pride-cyan: #6bd5dd;
-  --success: #9ee8b8;
-  --success-container: #0b3b22;
-  --warning: #ffd58a;
-  --warning-container: #4b3200;
+  --cm-ink: #f6f1e7;
+  --cm-ink-muted: #c4bfb4;
+  --cm-border-ink: #5d668c;
+  --cm-border-strong: #737da8;
+  --cm-border-card: #383e59;
+
+  --cm-cobalt: #96adff;
+  --cm-cobalt-vivid: #6b8aff;
+  --cm-cobalt-soft: #263573;
+  --cm-cobalt-ink: #e5ebff;
+
+  --cm-teal: #6ce5c1;
+  --cm-teal-vivid: #34d1a4;
+  --cm-teal-soft: #134a3a;
+  --cm-teal-ink: #d5faee;
+
+  --cm-coral: #ff9b90;
+  --cm-coral-vivid: #ff6f61;
+  --cm-coral-soft: #5c231d;
+  --cm-coral-ink: #ffe3de;
+
+  --cm-sun: #ffc83d;
+  --cm-sun-soft: #46350b;
+  --cm-sun-ink: #ffe8a3;
+
+  --cm-lilac: #b9a4ff;
+  --cm-lilac-soft: #352863;
+  --cm-lilac-ink: #eee8ff;
+
+  --cm-blush: #ff9ec7;
+  --cm-blush-soft: #542038;
+  --cm-blush-ink: #ffe3ef;
+
+  --cm-sky-soft: #1c3654;
+  --cm-peach-soft: #4d2c1c;
+
+  --cm-shadow-color: rgb(5 6 11 / 52%);
+  --cm-shadow-color-strong: rgb(5 6 11 / 72%);
+  --shadow-1: 3px 3px 0 var(--cm-shadow-color);
+  --shadow-2: 5px 5px 0 var(--cm-shadow-color-strong);
+  --shadow-3: 6px 6px 0 rgb(5 6 11 / 82%);
+  --cm-btn-shadow: 0 3px 0 #090a10;
+  --cm-btn-shadow-hover: 0 5px 0 #090a10;
+  --cm-btn-shadow-active: 0 1px 0 #090a10;
+
+  --illo-bg: #222638;
+  --illo-card: #2a2f45;
+  --illo-arch: #2b3a78;
+  --illo-arch-alt: #592622;
+  --illo-ink: #f6f1e7;
+  --illo-cobalt: #6b8aff;
+  --illo-coral: #ff7062;
+  --illo-sun: #ffc83d;
+  --illo-leaf-dark: #1eb88b;
+  --illo-leaf-light: #6ce5c1;
+  --illo-lilac: #a58bff;
+  --illo-blush: #ff94c2;
+  --illo-ochre: #f6ad49;
+  --illo-terracotta: #e67e55;
+  --illo-plum: #594596;
+
+  --md-primary: var(--cm-cobalt);
+  --md-on-primary: #0e1b5c;
+  --md-primary-container: var(--cm-cobalt-soft);
+  --md-on-primary-container: var(--cm-cobalt-ink);
+  --md-secondary: var(--cm-teal);
+  --md-on-secondary: #053829;
+  --md-secondary-container: var(--cm-teal-soft);
+  --md-on-secondary-container: var(--cm-teal-ink);
+  --md-tertiary: var(--cm-coral);
+  --md-on-tertiary: #4f120b;
+  --md-tertiary-container: var(--cm-coral-soft);
+  --md-on-tertiary-container: var(--cm-coral-ink);
+  --md-error: #ffb4ab;
+  --md-on-error: #690005;
+  --md-error-container: #7d1d17;
+  --md-on-error-container: #ffdad6;
+  --md-surface: var(--cm-canvas);
+  --md-surface-dim: #11131b;
+  --md-surface-container-lowest: #11131b;
+  --md-surface-container-low: var(--cm-paper);
+  --md-surface-container: var(--cm-cream);
+  --md-surface-container-high: var(--cm-cream-high);
+  --md-surface-container-highest: var(--cm-cream-highest);
+  --md-on-surface: var(--cm-ink);
+  --md-on-surface-variant: var(--cm-ink-muted);
+  --md-outline: #8d94b3;
+  --md-outline-variant: var(--cm-border-card);
+  --md-inverse-surface: #f6f1e7;
+  --md-inverse-on-surface: #191b26;
+  --md-scrim: rgb(5 6 11 / 70%);
+  --md-hover: rgb(150 173 255 / 12%);
+  --md-active: rgb(150 173 255 / 20%);
+
+  --pride-red: #ff7575;
+  --pride-orange: #ffa352;
+  --pride-yellow: #ffd152;
+  --pride-green: #4ce0b3;
+  --pride-blue: #7d9bff;
+  --pride-violet: #b69eff;
+  --pride-pink: #ff99c8;
+  --pride-cyan: #5fd6f2;
+
+  --success: #80f0c8;
+  --success-container: #0f3f2f;
+  --warning: #ffd885;
+  --warning-container: #4a3409;
   --danger: #ffb4ab;
-  --danger-container: #5c1512;
-  --info: #b8ceff;
-  --info-container: #18345e;
+  --danger-container: #5c1915;
+  --info: #b3c5ff;
+  --info-container: #1f3169;
 
-  --bg: var(--md-surface);
-  --bg-elevated: var(--md-surface-container-low);
-  --bg-muted: var(--md-surface-container);
-  --fg: var(--md-on-surface);
-  --fg-muted: var(--md-on-surface-variant);
-  --border: var(--md-outline-variant);
-  --link: var(--md-primary);
-  --focus: #9ecbff;
+  --bg: var(--cm-canvas);
+  --bg-elevated: var(--cm-paper);
+  --bg-muted: var(--cm-cream);
+  --fg: var(--cm-ink);
+  --fg-muted: var(--cm-ink-muted);
+  --border: var(--cm-border-card);
+  --link: var(--cm-cobalt);
+  --focus: #96adff;
 
-  --page-glow-1: rgb(79 61 122 / 38%);
-  --page-glow-2: rgb(0 80 80 / 22%);
-  --page-glow-3: rgb(99 59 72 / 24%);
-  --hero-surface: linear-gradient(135deg, #211a36 0%, #141218 48%, #102a2a 100%);
-  --hero-ink: #f2ecff;
-  --hero-muted: #cbc2dd;
-  --code-bg: #211e28;
-  --selection: #4f3d7a;
-  --shadow-1: 0 1px 2px rgb(0 0 0 / 40%), 0 1px 3px 1px rgb(0 0 0 / 30%);
-  --shadow-2: 0 2px 6px rgb(0 0 0 / 45%), 0 1px 2px rgb(0 0 0 / 35%);
-  --shadow-3: 0 10px 30px rgb(0 0 0 / 50%), 0 2px 8px rgb(0 0 0 / 35%);
+  --hero-surface: #1c1f2e;
+  --hero-ink: #f6f1e7;
+  --hero-muted: #c9c4b9;
+  --code-bg: #222638;
+  --selection: #473878;
+  --cm-dot-pattern: rgb(246 241 231 / 9%);
+  --cm-marker: #59430d;
 }
