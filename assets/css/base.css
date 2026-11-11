@@ -1,4 +1,4 @@
-/* 基础层：Corporate Memphis（企业孟菲斯）画布、排版、表格、无障碍与打印。 */
+/* 基础层：页面画布、排版、表格、无障碍与打印。 */
 
 *,
 *::before,
@@ -324,7 +324,7 @@ figcaption {
   margin-top: var(--space-4);
 }
 
-/* 企业孟菲斯标志性四色扁平几何标题饰条 */
+/* 页面标题的清晰识别饰条 */
 .prose > h2::before {
   content: "";
   display: block;

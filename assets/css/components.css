@@ -1,4 +1,4 @@
-/* 组件层：Corporate Memphis（企业孟菲斯 / Alegria）导航、胶囊按钮、卡片、主视觉与目录。 */
+/* 组件层：导航、按钮、卡片、主视觉与目录。 */
 
 .spectrum-bar {
   height: 5px;
@@ -539,7 +539,7 @@ html[data-mode="dark"] .theme-toggle__dark {
   margin-top: var(--space-5);
 }
 
-/* 首页主视觉（扁平几何色块背景 + Alegria 社群插画画框） */
+/* 首页主视觉与社区插画画框 */
 .hero {
   position: relative;
   overflow: hidden;
@@ -594,7 +594,7 @@ html[data-mode="dark"] .theme-toggle__dark {
   line-height: 1.08;
 }
 
-/* 企业孟菲斯扁平荧光马克笔底色强调 */
+/* 标题重点文字样式 */
 .hero__title .accent {
   display: inline;
   padding-inline: 0.1em;
