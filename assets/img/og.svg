@@ -1,53 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="光谱档案：按你当下的需要，找到可信的 LGBTQ+ 中文资料">
-  <rect width="1200" height="630" fill="#F4F7FA"/>
-  <rect width="1200" height="8" fill="#185ADB"/>
-  <rect x="0" y="8" width="360" height="5" fill="#087F6B"/>
-  <rect x="40" y="48" width="54" height="54" rx="12" fill="#185ADB"/>
-  <path d="M57 60h18l9 9v23H57a3 3 0 0 1-3-3V63a3 3 0 0 1 3-3Z" fill="#fff"/>
-  <path d="M75 60v9h9" fill="#DCE8FF"/>
-  <path d="M60 77h15m-15 6h12" stroke="#52667B" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="m63 88 3 2.5 5-5" fill="none" stroke="#087F6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="112" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="800" fill="#15283E">光谱档案</text>
-  <text x="112" y="98" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#52667B">SPECTRUM ARCHIVE</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="光谱档案：LGBTQ+ 中文资料与支持">
+  <defs>
+    <pattern id="xerox" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#1C1921" opacity=".18"/></pattern>
+    <pattern id="blue-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0v10" stroke="#1C1921" stroke-width="1" opacity=".2"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#F8F1DD"/>
+  <rect width="1200" height="630" fill="url(#xerox)"/>
+  <path d="M0 0h1200v18H0z" fill="#1C1921"/>
+  <path d="M0 18h230v9H0z" fill="#D54432"/><path d="M230 18h230v9H230z" fill="#F6D84B"/><path d="M460 18h230v9H460z" fill="#067A64"/><path d="M690 18h230v9H690z" fill="#243EEA"/><path d="M920 18h280v9H920z" fill="#7650A8"/>
 
-  <text x="52" y="196" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="2" fill="#087F6B">LGBTQ+ 中文资料 · 不追踪</text>
-  <text x="48" y="282" font-family="DejaVu Sans,Arial,sans-serif" font-size="58" font-weight="800" fill="#15283E">你正在寻找什么？</text>
-  <text x="52" y="335" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" fill="#52667B">按当下的问题选择入口，从清晰、可核查的资料开始。</text>
-  <rect x="52" y="380" width="274" height="60" rx="9" fill="#185ADB"/>
-  <text x="82" y="419" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="800" fill="#fff">找到适合你的下一步</text>
-  <g font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#52667B">
-    <circle cx="64" cy="483" r="7" fill="#087F6B"/><text x="82" y="489">免注册</text>
-    <circle cx="166" cy="483" r="7" fill="#087F6B"/><text x="184" y="489">零追踪</text>
-    <circle cx="271" cy="483" r="7" fill="#087F6B"/><text x="289" y="489">来源可查</text>
-  </g>
-  <text x="52" y="572" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="600" fill="#52667B">elysianki4225-png.github.io/LGBTQ</text>
+  <path d="M62 78 657 66l17 464-600 13Z" fill="#FFFDF5" stroke="#1C1921" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M62 78 657 66l17 464-600 13Z" fill="url(#xerox)" opacity=".38"/>
+  <path d="m106 61 188 0-8 32-179 4Z" fill="#F4A5B5" stroke="#1C1921" stroke-width="2"/>
+  <path d="M103 129 532 121l2 37-432 8Z" fill="#D7F0E5" stroke="#1C1921" stroke-width="2"/>
+  <text x="123" y="155" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="22" font-weight="800" letter-spacing="2" fill="#1C1921">光谱档案　·　LGBTQ+ 中文资料</text>
 
-  <rect x="710" y="92" width="430" height="420" rx="16" fill="#fff" stroke="#D7E0EA" stroke-width="2"/>
-  <text x="750" y="146" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="1" fill="#185ADB">快速入口</text>
-  <text x="750" y="181" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="800" fill="#15283E">从眼前的事开始</text>
-  <path d="M750 207h350" stroke="#D7E0EA" stroke-width="2"/>
+  <path d="m101 197 516-8 3 143-514 7Z" fill="#F6D84B" stroke="#1C1921" stroke-width="3" stroke-linejoin="round"/>
+  <text x="125" y="252" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="50" font-weight="900" fill="#1C1921">身份、支持、下一步</text>
+  <path d="m115 278 470-8 1 86-469 7Z" fill="#243EEA" stroke="#1C1921" stroke-width="3" stroke-linejoin="round"/>
+  <text x="137" y="337" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="44" font-weight="900" fill="#FFFDF5">从这里开始，慢慢看清。</text>
+  <text x="122" y="414" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="24" font-weight="600" fill="#514959">按你当下的问题，找到可信的中文资料。</text>
 
-  <rect x="750" y="232" width="48" height="48" rx="9" fill="#E8F0FF"/>
-  <path d="M774 243 786 248v10c0 8-6 13-12 16-7-3-12-8-12-16v-10Z" fill="none" stroke="#185ADB" stroke-width="2.5" stroke-linejoin="round"/>
-  <text x="818" y="252" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="800" fill="#15283E">安全或情绪支持</text>
-  <text x="818" y="275" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#52667B">危机应对、热线与身边支持</text>
-  <path d="m1080 247 7 7-7 7" fill="none" stroke="#52667B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M750 299h350" stroke="#D7E0EA" stroke-width="1.5"/>
+  <path d="m110 452 191-3 2 50-191 5Z" fill="#D7F0E5" stroke="#1C1921" stroke-width="2"/><text x="137" y="485" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="19" font-weight="800" fill="#064839">不追踪</text>
+  <path d="m316 449 190-4 2 51-190 4Z" fill="#FFE0D8" stroke="#1C1921" stroke-width="2"/><text x="343" y="482" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="19" font-weight="800" fill="#5E1B16">来源可查</text>
+  <path d="m522 446 113-3 2 52-113 3Z" fill="#EEE5F5" stroke="#1C1921" stroke-width="2"/><text x="543" y="479" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="19" font-weight="800" fill="#38234F">免登录</text>
+  <text x="111" y="562" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#514959">elysianki4225-png.github.io/LGBTQ</text>
 
-  <rect x="750" y="318" width="48" height="48" rx="9" fill="#E1F4EE"/>
-  <path d="M759 342h7l4-12 7 22 5-14h8" fill="none" stroke="#087F6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="818" y="338" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="800" fill="#15283E">医疗选择与健康</text>
-  <text x="818" y="361" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#52667B">照护选项、风险与就医准备</text>
-  <path d="m1080 333 7 7-7 7" fill="none" stroke="#52667B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M750 385h350" stroke="#D7E0EA" stroke-width="1.5"/>
+  <!-- Hand-cut directory cards -->
+  <path d="m765 112 365-8 22 396-378 11Z" fill="#1C1921"/>
+  <path d="m748 96 370 2 9 397-379 0Z" fill="#D54432" stroke="#1C1921" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m773 120 320-1 4 346-320 3Z" fill="#FFFDF5" stroke="#1C1921" stroke-width="3"/>
+  <path d="m773 120 320-1 4 346-320 3Z" fill="url(#xerox)" opacity=".42"/>
+  <path d="m833 79 138 4-10 34-125-2Z" fill="#F4A5B5" stroke="#1C1921" stroke-width="2"/>
+  <text x="813" y="167" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="17" font-weight="900" letter-spacing="3" fill="#D54432">剪贴目录 / OPEN INDEX</text>
+  <path d="M811 190h249" stroke="#1C1921" stroke-width="3"/>
 
-  <rect x="750" y="404" width="48" height="48" rx="9" fill="#FFF2D8"/>
-  <circle cx="774" cy="422" r="8" fill="none" stroke="#B46B00" stroke-width="2.5"/>
-  <path d="M760 447c2-10 7-15 14-15s13 5 15 15" fill="none" stroke="#B46B00" stroke-width="2.5" stroke-linecap="round"/>
-  <text x="818" y="424" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="800" fill="#15283E">身份与称呼</text>
-  <text x="818" y="447" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#52667B">概念、词汇与自我认同</text>
-  <path d="m1080 419 7 7-7 7" fill="none" stroke="#52667B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="750" y="474" width="350" height="1.5" fill="#D7E0EA"/>
-  <circle cx="759" cy="492" r="5" fill="#087F6B"/>
-  <text x="775" y="497" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600" fill="#52667B">浏览选择留在本机，不会被网站记录</text>
+  <path d="m808 216 56-3 2 53-57 2Z" fill="#F6D84B" stroke="#1C1921" stroke-width="2"/><text x="826" y="250" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="900" fill="#1C1921">01</text><text x="883" y="239" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="25" font-weight="900" fill="#1C1921">身份图谱</text>
+  <path d="M811 280h249" stroke="#1C1921" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <path d="m808 300 56-3 2 53-57 2Z" fill="#D7F0E5" stroke="#1C1921" stroke-width="2"/><text x="826" y="334" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="900" fill="#1C1921">02</text><text x="883" y="323" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="25" font-weight="900" fill="#1C1921">安全与支持</text>
+  <path d="M811 364h249" stroke="#1C1921" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <path d="m808 384 56-3 2 53-57 2Z" fill="#E3E6FF" stroke="#1C1921" stroke-width="2"/><text x="826" y="418" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="900" fill="#1C1921">03</text><text x="883" y="407" font-family="Noto Sans SC,DejaVu Sans,sans-serif" font-size="25" font-weight="900" fill="#1C1921">医疗与资源</text>
+
+  <path d="m1100 81 7 16 17 6-17 6-7 17-7-17-17-6 17-6Z" fill="#F6D84B" stroke="#1C1921" stroke-width="2"/>
+  <path d="m714 523 14 8-7 18-14-9Z" fill="#067A64" stroke="#1C1921" stroke-width="2"/>
+  <path d="M0 610h1200v20H0z" fill="#1C1921"/>
+  <path d="M0 610h240v20H0z" fill="#D54432"/><path d="M240 610h240v20H240z" fill="#F6D84B"/><path d="M480 610h240v20H480z" fill="#067A64"/><path d="M720 610h240v20H720z" fill="#243EEA"/><path d="M960 610h240v20H960z" fill="#7650A8"/>
 </svg>

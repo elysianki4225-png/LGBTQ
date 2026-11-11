@@ -1,8 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="光谱档案">
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="#185ADB"/>
-  <path d="M18 11h20l10 10v31H18a4 4 0 0 1-4-4V15a4 4 0 0 1 4-4Z" fill="#fff"/>
-  <path d="M38 11v10h10" fill="#DCE8FF"/>
-  <path d="M21 28h16M21 34h13" stroke="#52667B" stroke-width="2.8" stroke-linecap="round"/>
-  <rect x="21" y="40" width="20" height="7" rx="3.5" fill="#087F6B"/>
-  <path d="m28 43.5 3 2.6 5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <pattern id="print-dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#1C1921" opacity=".38"/></pattern>
+  </defs>
+  <path d="m8 5 44 2 4 42-8 9-39-2-4-9Z" fill="#F8F1DD" stroke="#1C1921" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M14 12h37v38H14z" fill="url(#print-dots)" opacity=".55"/>
+  <path d="m15 15 30 1-1 23-29-1Z" fill="#F6D84B" stroke="#1C1921" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m20 29 7 6 14-15" fill="none" stroke="#243EEA" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="m8 48 7-6 8 8 9-7 9 8 8-6 7 4" fill="#D54432" stroke="#1C1921" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m48 9 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#067A64" stroke="#1C1921" stroke-width="1.5"/>
 </svg>

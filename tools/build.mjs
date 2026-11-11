@@ -372,7 +372,7 @@ const render404 = async (layout, sprite) => {
     OG_IMAGE_ALT: `${site.name}：LGBTQ+ 中文资料、支持与安全指南`,
     THEME_LIGHT: site.themeColorLight,
     THEME_DARK: site.themeColorDark,
-    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'conversion']
+    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'zine']
       .map((name) => `<link rel="stylesheet" href="${assetUrl(`assets/css/${name}.css`, '')}">`)
       .join('\n  '),
     SPRITE: sprite,
@@ -451,7 +451,7 @@ const renderPage = async (page, layout, sprite) => {
     OG_IMAGE_ALT: escapeHtml(`${page.ogAlt || `${site.name}：${page.nav}`}`),
     THEME_LIGHT: site.themeColorLight,
     THEME_DARK: site.themeColorDark,
-    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'conversion']
+    CSS: ['tokens', 'base', 'components', 'pages', 'content', 'zine']
       .map((name) => `<link rel="stylesheet" href="${assetUrl(`assets/css/${name}.css`, rootPrefix)}">`)
       .join('\n  '),
     SPRITE: sprite,
