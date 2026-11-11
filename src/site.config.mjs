@@ -23,8 +23,8 @@ export const site = {
   updated: '2026-10-31',
   updatedLabel: '2026 年 10 月 31 日',
   locale: 'zh-CN',
-  themeColorLight: '#F4F7FA',
-  themeColorDark: '#101A27',
+  themeColorLight: '#F8F1DD',
+  themeColorDark: '#17151B',
   ogImage: '/assets/img/og.png',
   keywords: [
     'LGBTQ',
@@ -39,8 +39,8 @@ export const site = {
     '反歧视',
     '隐私优先',
     '静态网站',
-    'Conversion-Focused',
-    '转化优先',
+    'Zine Collage',
+    'Zine 拼贴',
   ],
 };
 
@@ -307,7 +307,7 @@ export const pages = [
       '光谱档案是一个非官方、非营利的社区资料项目。它不隶属于任何政党、宗教、国家机构或商业公司。本页说明我们的编辑原则、AI 参与方式、技术栈、可访问性目标、许可与联系方式。',
     description:
       '关于光谱档案：项目使命、中立与事实核查原则、AI 辅助构建声明、技术栈、可访问性、性能预算、许可、联系方式、更新日志与免责声明。',
-    keywords: ['光谱档案', 'AI 构建', '开源 LGBTQ 网站', '编辑原则', 'Conversion-Focused', '转化优先'],
+    keywords: ['光谱档案', 'AI 构建', '开源 LGBTQ 网站', '编辑原则', 'Zine Collage', 'Zine 拼贴'],
     toc: true,
   },
   {
