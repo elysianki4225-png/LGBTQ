@@ -223,10 +223,22 @@ a:hover { color:var(--dl-violet); }
 .prose summary { border-radius:1rem; }
 .prose .sources { border:1px solid #ded8ee; border-radius:1.25rem; background:linear-gradient(145deg,#fff,#f3f0fc); box-shadow:0 12px 28px rgb(53 37 105 / 7%); }
 .prose .sources h2 { color:#3d2d7f; }
-.site-footer { position:relative; border-top:1px solid #55487d; background:linear-gradient(115deg,#211a3a,#30244f 60%,#234553); color:#e8e3f5; }
-.site-footer .brand,.site-footer .footer__title,.site-footer .footer__note { color:#fff; }
-.site-footer a { color:#c9f1e8; }
-.footer__bottom { border-top:1px solid rgb(255 255 255 / 18%); }
+.site-footer { position:relative; border-top:1px solid #d5cdea; background:linear-gradient(118deg,#f1edfb 0%,#f5f3fc 48%,#e5f3f0 100%); color:#342c4e; box-shadow:0 -12px 38px rgb(58 43 111 / 5%),inset 0 1px 0 #fff; }
+.site-footer .brand,.site-footer .footer__title,.site-footer .footer__note { color:#342c4e; }
+.site-footer .brand__text span { color:#716985; }
+.site-footer .footer__brand p { color:#57516b; }
+.site-footer .footer__title { color:#514477; }
+.site-footer a { color:#493b81; }
+.site-footer a:hover { color:#35228f; }
+.site-footer .badge { border-color:#d6cde8; background:rgb(255 255 255 / 82%); color:#51496a; }
+.footer__bottom { border-top:1px solid #d7d1e5; }
+@media (prefers-color-scheme:dark) { :root:not([data-theme="light"]) .site-footer { border-color:#51476b; background:linear-gradient(118deg,#302b46 0%,#342f4a 48%,#25413f 100%); color:#eeeafa; box-shadow:0 -12px 38px rgb(0 0 0 / 18%),inset 0 1px 0 rgb(255 255 255 / 6%); } :root:not([data-theme="light"]) .site-footer .brand,:root:not([data-theme="light"]) .site-footer .footer__title,:root:not([data-theme="light"]) .site-footer .footer__note { color:#f5f1ff; } :root:not([data-theme="light"]) .site-footer .brand__text span,:root:not([data-theme="light"]) .site-footer .footer__brand p { color:#d2cbe3; } :root:not([data-theme="light"]) .site-footer a { color:#bdeee4; } :root:not([data-theme="light"]) .site-footer .badge { border-color:#5a506f; background:rgb(255 255 255 / 9%); color:#eeeafa; } :root:not([data-theme="light"]) .site-footer .footer__bottom { border-color:#51476b; } }
+:root[data-theme="dark"] .site-footer { border-color:#51476b; background:linear-gradient(118deg,#302b46 0%,#342f4a 48%,#25413f 100%); color:#eeeafa; box-shadow:0 -12px 38px rgb(0 0 0 / 18%),inset 0 1px 0 rgb(255 255 255 / 6%); }
+:root[data-theme="dark"] .site-footer .brand,:root[data-theme="dark"] .site-footer .footer__title,:root[data-theme="dark"] .site-footer .footer__note { color:#f5f1ff; }
+:root[data-theme="dark"] .site-footer .brand__text span,:root[data-theme="dark"] .site-footer .footer__brand p { color:#d2cbe3; }
+:root[data-theme="dark"] .site-footer a { color:#bdeee4; }
+:root[data-theme="dark"] .site-footer .badge { border-color:#5a506f; background:rgb(255 255 255 / 9%); color:#eeeafa; }
+:root[data-theme="dark"] .site-footer .footer__bottom { border-color:#51476b; }
 
 /* Dark mode uses deep aubergine surfaces with the same distinct depth cues. */
 @media (prefers-color-scheme: dark) {
